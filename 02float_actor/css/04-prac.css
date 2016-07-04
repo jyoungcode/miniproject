@@ -1,0 +1,123 @@
+/*
+1. margin-collapsing은 float된 상태에서 적용되지 않는다.
+2. 트위터 아이콘에 박스하나를 줘서 text-align:center 적용 가능
+2-1. 그 위에 가상 요소로 border를 준다
+*/
+/* twitter */
+.twitter { /*추가 페이스북 문제*/
+  width: 56.693px;
+  height: 56.693px;
+  border-top: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  /*padding: 15px;*/
+}
+.twitter svg {
+  /*float: left;*/
+  /*display: block;*/
+  /*line-height: 56.693px;*/
+  margin-top: 15px;
+  /*margin-left: 15px;*/
+  /*margin-right: 7.5px;*/
+}
+.icon_twitter:hover {
+  fill: #4ca6de;
+  cursor: pointer;
+}
+
+/*clearfix*/
+.clearfix::after {
+  content: 'pseudo element';
+  visibility: hidden;
+  display: block;
+  clear: both;
+  height: 0;
+}
+
+/* structure */
+.wrap {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container {
+  float: left;
+}
+.col100 {
+  width: 100%;
+  float: left; /* 나중 추가 컨텐츠를 위해서 */
+}
+.col50 {
+  width: 50%;
+  float: left;
+}
+
+/*[class*="img_"] {
+  float: left;
+}*/
+[class*="para"] {
+  /*display: block;*/
+  text-align: center; /* 인라인 요소만 */
+  height: 327px;
+  /*float: left;*/
+  /*line-height: 327px;*/
+}
+[class*="para"] > p {
+  width: 80%;
+  margin: 0 auto;
+  /*margin-left: 20px;
+  margin-right: 20px;*/ /* 어느게 좋은가 ? */
+}
+.img > img {
+  /*display: block;*/
+  width: 100%;
+  /*float: left;*/
+}
+
+/* style */
+[class*="para"] > h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 19px;
+  line-height: 1.1;
+  color: #464646;
+  padding-top: 55px;
+  padding-bottom: 18px;
+}
+[class*="para"] > p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #464646;
+  padding-bottom: 13px;
+}
+
+
+/* hover */
+[class*="para"]:hover {
+  /*background-image: url('../images/sl_01.jpg');*/
+  /*opacity: 0.3;*/
+  /*filter: alpha(opacity=30);*/ /* 사진 왜 주신건가? */
+  background: rgba(255, 242, 226, 0.8);
+}
+
+.container {
+  position: relative;
+}
+
+.para:hover::before {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 242, 226, 0.8);
+  transform:rotate(45deg);
+  -ms-transform:rotate(45deg);
+  -webkit-transform:rotate(45deg);
+  -moz-transform:rotate(45deg);
+  -o-transform:rotate(45deg);
+  position: absolute;
+  /* 327사진크기의 절반 163.5 - height절반 15 하면 = 148.5px */
+  top: 148.5px;
+  right: 50%;
+  margin-right: -15px;
+}
