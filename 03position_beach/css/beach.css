@@ -28,15 +28,15 @@ body {
   color: #e7e7e7;
 }
 .wrap {
-  position: relative;
+  /*position: relative;*/
 }
 [class^="ui_"] {
   position : absolute;
 }
 .ui_link {top: 0px; left: 0px;}
 .ui_weather {top:0px; right:0px; color: #fff;}
-.ui_location {left:0px; bottom:200px;}
-.ui_todo {right:0px; bottom: 200px;}
+.ui_location {left:0px; bottom:0px;}
+.ui_todo {right:0px; bottom: 0px;}
 
 .ui_main {
   margin-left: 50%;
@@ -91,9 +91,17 @@ body {
   text-align: center;
   cursor: auto;
 }
+.sentence {
+  margin-top: 40px;
+}
 
-blockquote p {
+blockquote > p {
   font-size: 20px;
   color: rgba(255,255,255, 0.9);
+}
+blockquote > p:hover {
 
+}
+blockquote:hover::after {
+  content: 'Thucydides'
 }

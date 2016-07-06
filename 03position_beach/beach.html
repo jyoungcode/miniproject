@@ -7,13 +7,15 @@
   <link rel="stylesheet" href="../Resources/reset.css">
   <link rel="stylesheet" href="../Resources/common.css">
   <link rel="stylesheet" href="css/beach.css">
+  <link rel="stylesheet" href="../Resources/ionicons/ionicons.min.css">
   <link href="https://fonts.googleapis.com/css?family=Oswald:400,300" rel="stylesheet" type="text/css">
 </head>
 <body>
   <div class="wrap">
-    <div class="ui_link common">Links<span class="search"></span></div>
-    <div class="ui_weather common">21도</div>
-    <div class="ui_location common">Seoul</div>
+
+    <div class="ui_link common">Links<span aria-label="search" class="ion-search"></span></div>
+    <div class="ui_weather common"><span aria-label="weather" class="ion-ios-partlysunny-outline"></span>21&deg;</div>
+    <div class="ui_location common"><span aria-label="location" class="ion-gear-b"></span>Seoul</div>
     <div class="ui_todo common">Todo</div>
 
     <div class="ui_main">
@@ -27,14 +29,13 @@
       </div>
       <h3>What is your main focus for today?</h3>
       <input type="text" name="name" value="">
-      <!-- <div class="sentence"> -->
-      <blockquote cite="http://www.brainyquote.com/quotes/quotes/t/thucydides384481.html">
-        <p>"The secret to happiness is freedom. And the secret to freedom is courage."</p>
-        <cite>Thucydides</cite>
-        <!-- blockquote 인데 안에 트위터 아이콘 들어가도 되나? -->
-        <span></span>
-      </blockquote>
-      <!-- </div><!--sentence -->
+      <div class="sentence">
+        <blockquote cite="http://www.brainyquote.com/quotes/quotes/t/thucydides384481.html">
+          <p>"The secret to happiness is freedom. And the secret to freedom is courage."</p>
+          <!-- blockquote 인데 안에 트위터 아이콘 들어가도 되나? -->
+        </blockquote>
+      </div>
+
 
     </div><!--ui_main-->
   </div><!--wrap-->
