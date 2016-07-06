@@ -1,0 +1,79 @@
+html, body {
+  height: 100vh;
+}
+
+body {
+  background: radial-gradient(#14dae7, #14dae7, white);
+}
+
+.buttonset-moive-control {
+  width: 300px;
+  /*margin이 아닌 position으로 처리하는게 바람직하다. */
+  /*margin-top: 300px;*/
+  /*margin-left: auto;*/
+  /*margin-right: auto;*/
+  border-radius: 25px;
+  /*float: left;*/
+  overflow: hidden;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* js처리, margin 처리는 성능상 좋지 않다. */
+  transform: translate(-50%, -50%);
+}
+[class*="button-"]{
+  display: block;
+  float: left;
+  width: 100px;
+  height: 40px;
+  font-family: sans-serif;
+  border-right: 1px solid black;
+  position: relative;
+  color: #559e96;
+}
+.fa {
+  line-height: 30px;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  color: #559e96;
+}
+
+/* style */
+[class*="button-"]:last-child{
+  border-right: 0;
+}
+
+[class*="button-"]:hover {
+  background: #162cf2;
+  color: #fff;
+  cursor: pointer;
+  /*box-shadow: outset(inset) x y blur spread color;*/
+  box-shadow: inset 1px 1px 5px #b5b2b2;
+}
+
+[class*="button-"]:hover .fa {
+  color: inherit;
+}
+
+[class*="button-"]:active {
+  background: #2956de;
+  color: #fff;
+}
+[class*="button-"]:focus {
+  background: #14dae7;
+  color: #fff;
+}
+[class*="button-"]:focus .fa {
+  color: inherit;
+}
+
+[class*="button-"]:first-child {
+  margin: 0;
+  border-radius: 25px 0px 0px 25px;
+}
+[class*="button-"]:last-child {
+  margin: 0;
+  border-radius: 0px 25px 25px 0px;
+}
