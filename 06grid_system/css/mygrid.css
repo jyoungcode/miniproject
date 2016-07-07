@@ -1,0 +1,146 @@
+body * {
+  box-sizing: border-box;
+}
+
+body.show-baseline::before {
+  content: '';
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 150vh;
+  background-image: linear-gradient(180deg, transparent 95%, #683dc4 95%);
+  background-size: 1px 1.5em;
+}
+
+.clearfix::after {
+  content: 'pseudo element'; /* 스크린리더 안읽힘. 명시적 표현 */
+  visibility: hidden;
+  display: block;
+  clear: both;
+  height: 0;
+}
+
+.entire_wrap {
+  /* block 부모는 width, height는 자식들의 영향 */
+  width: 960px;
+  /*height: 768px;*/
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(208, 221, 220, 0.5);
+}
+.h_wrap {
+  width: 620px;
+  height: 72px;
+  background: rgba(155, 179, 238, 0.5);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
+}
+.h_wrap .logo {
+  width: 221px;
+  height: 72px;
+  background: #0d88e0;
+  float: left;
+  /*남은 공간*/
+  margin-right: 19px;
+}
+.h_wrap .search {
+  width: 380px;
+  height: 72px;
+  background: #0d88e0;
+  float: left;
+}
+nav {
+  width: 960px;
+  height: 72px;
+  background: #0d88e0;
+  /*clear: both;*/
+}
+.main {
+  width: 960px;
+}
+.sec_1_2_wrap {
+  float: left;
+
+}
+.sec_1 {
+  width: 620px;
+  height: 193px;
+  background: rgba(155, 179, 238, 0.9);
+}
+.sec_2 {
+  width: 620px;
+  height: 409px;
+  background: rgba(84, 134, 255, 0.9);
+}
+.at_1, .at_2 {
+  width: 300px;
+  height: 144px;
+  margin-top: 24px;
+  background: rgb(210, 37, 238);
+  float: left;
+}
+
+.ml {
+  margin-left: 10px;
+}
+.mr {
+  margin-right: 10px;
+}
+
+.at_3, .at_4, .at_5, .at_6 {
+  width: 140px;
+  height: 193px;
+  margin-top: 24px;
+  background: rgb(210, 37, 238);
+  float: left;
+}
+
+.sec_3_4_5_wrap {
+  float: left;
+
+  margin-left: 20px;
+}
+.sec_3_login {
+  width: 320px;
+  height: 168px;
+  background: #bef66c;
+  /*float: left;*/
+}
+.sec_4_weather {
+  width: 320px;
+  height: 96px;
+  background: #c9e420;
+  /*float: left;*/
+}
+.sec_5 {
+  width: 320px;
+  height: 336px;
+  background: #0a3562;
+}
+.ad_title {
+  width: 320px;
+  height: 72px;
+  background: #e6721e;
+  margin-bottom: 24px;
+}
+[class^="ad_at_"] {
+  width: 150px;
+  height: 96px;
+  background: #e5e91d;
+  float: left;
+}
+.ad_1_2_wrap {
+  margin-bottom: 24px;
+  width: 320px;
+  height: 96px;
+  background: #e321e9;
+}
+.ad_3_4_wrap {
+  width: 320px;
+  height: 96px;
+  background: #e321e9;
+}
