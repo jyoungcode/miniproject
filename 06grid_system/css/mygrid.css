@@ -57,14 +57,13 @@ nav {
   width: 960px;
   height: 72px;
   background: #0d88e0;
-  /*clear: both;*/
 }
 .main {
   width: 960px;
 }
 .sec_1_2_wrap {
   float: left;
-
+  overflow: hidden;
 }
 .sec_1 {
   width: 620px;
@@ -101,20 +100,18 @@ nav {
 
 .sec_3_4_5_wrap {
   float: left;
-
+  overflow: hidden;
   margin-left: 20px;
 }
 .sec_3_login {
   width: 320px;
   height: 168px;
   background: #bef66c;
-  /*float: left;*/
 }
 .sec_4_weather {
   width: 320px;
   height: 96px;
   background: #c9e420;
-  /*float: left;*/
 }
 .sec_5 {
   width: 320px;

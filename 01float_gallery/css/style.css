@@ -3,6 +3,14 @@
 body {
   background: #a6edf0;
 }
+/* clearfix */
+.clearfix::after {
+  content: 'pseudo element'; /* 스크린리더 안읽힘. 명시적 표현 */
+  visibility: hidden;
+  display: block;
+  clear: both;
+  height: 0;
+}
 
 /* header */
 header {
@@ -36,32 +44,59 @@ header > h1 > a {
 }
 
 .nav {
-  height: 100%; /* ??? */
+  height: 40px;
   /*display: block;*/
   float: right;
 }
 
 .header_menu > li {
-  line-height: 100px;
-  padding-left: 30px;
-  padding-right: 30px;
+  /*line-height: 100px;*/
   float: left;
   cursor: auto;
 }
 .header_menu > li > a {
+  display: block;
   list-style-type: none;
   text-decoration: none;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 50px;
   font-family: 'Oswald', sans-serif;
   font-size: 1em;
   color: #00e7ef;
+  /*그냥 transition주자 animation 대신*/
+    /*transition: all 0.25s;*/
 }
 .header_menu > li:hover {
-  background-color: rgba(255, 255, 255, 0.6);
   border-top: 3px solid #ffaac8;
-  color: #ffaac8;
+  /*color: #ffaac8;*/ /*이게 왜 적용 안될까?*/
+  animation-name: navi;
+  animation-duration: 0.7s;
+  height: 37px; /* nav 40px - border 3px = 37px */
 }
 .header_menu > li > a:hover {
   color: #ffaac8;
+  animation-name: navi_text;
+  animation-duration: 0.5s;
+
+  /*padding-bottom: 3px;*/
+}
+
+/* nav_animation */
+@keyframes navi {
+    from {
+      background-color: #fff;
+      border-top: 3px solid #fff;
+    }
+    to {
+      background: rgba(255, 255, 255, 0.6);
+      /*background-color: rgba(234, 247, 247, 0.8);*/
+      border-top: 3px solid #ffaac8;
+    }
+}
+@keyframes navi_text {
+    from { color: #00e7ef; }
+    to { color: #ffaac8; }
 }
 
 /* main */
@@ -75,8 +110,11 @@ main {
 main > .main_menu {
   width: 100%;
   height: 100%;
-  float: left;
   text-align: center;
+  position: relative;
+  /* images가 inline-block 이라서 ul 높이가 없다??..
+    position 위치 잡기가 애매함.
+  */
 }
 
 .main_menu > li {
@@ -84,14 +122,45 @@ main > .main_menu {
   padding: 10px;
 }
 .main_menu > li > a {
+  display: block;
+  position: relative;
   text-decoration: none;
 }
 
 .main_menu > li > a > img {
   outline: 4px solid rgba(255, 255, 255, 0.9);
 }
-.main_menu > li > a > img:hover {
+.main_menu > li > a:hover > img {
   outline: 4px solid rgba(252, 199, 217, 0.9);
+  width: 420;
+  height: 630;
+}
+.main_menu > li > a:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(252, 199, 217, 0.5);
+}
+
+/* carousel */
+/* carousel의 부모는 main. 공통클래스는 디자인만?!...*/
+main > .btn_carousel {
+  width: 95%;
+  height: 50px;
+  margin-left: 35px; /* 계산맘대로..*/
+  position: absolute;
+  top: 65%; /* 수치가 안맞는다..*/
+}
+main .btn_carousel .btn_prev {
+  font-size: 2em;
+  float: left;
+}
+main .btn_carousel .btn_next {
+  font-size: 2em;
+  float: right;
 }
 
 /* footer */
@@ -123,15 +192,14 @@ footer {
     /*border: 1px solid black;*/
 }
 
-/*.footer_btn > .btn_prev {
+.footer_btn > .btn_prev {
   text-indent: -9999px;
   background-image: url("../images/a_left.png");
 }
 .footer_btn > .btn_next {
   text-indent: -9999px;
-  display: none;
   background-image: url("../images/a_right.png");
-}*/
+}
 
 @media only screen and (min-width: 500px) and (max-width: 1350px) {
   footer::before {
