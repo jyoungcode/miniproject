@@ -1,0 +1,32 @@
+.nav {}
+main {
+  /*height: 70vh;*/
+  /* 1920 * 1200 */
+  height: 500px;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  background: #c396d2;
+}
+.main_choice {
+
+}
+.contents {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+[class^="item_"] a {
+  display: block;
+  float: left;
+  width: 170px;
+  height: 170px;
+}
+.item_1 a { background-image: url('../images/album_1.jpg'); }
+.item_2 a { background-image: url('../images/album_2.jpg'); }
+.item_3 a { background-image: url('../images/album_3.jpg'); }
+.item_4 a { background-image: url('../images/album_4.jpg'); }
+.item_5 a { background-image: url('../images/album_5.jpg'); }
+.item_6 a { background-image: url('../images/album_6.jpg'); }
+.item_7 a { background-image: url('../images/album_7.jpg'); }
+/*.item_8 a { background-image: url('../images/album_8.jpg'); }*/
