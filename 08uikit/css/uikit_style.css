@@ -1,0 +1,163 @@
+/*! uikit_style.css ⓒ jyoungcode, 2016 */
+html {
+  font-size: 14px;
+}
+body {
+  /* 기본 폰트 설정 */
+  font-size: 1rem;
+  /* 행간 설정 */
+  line-height: 1.5rem; /* 21px */
+  /* Type Scale 1.313 */
+  /* Modular Scale = font-size*typescale 을 말함 */
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.mb_1 { margin-bottom: 1.5rem;}
+.mb_2 { margin-bottom: 3rem;}
+.mr_1 { margin-right: 1rem; }
+.mr_2 { margin-right: 2rem; }
+.pl_2 { padding-left: 2rem; }
+
+/* Layout 설정 */
+.section_div { margin-top: 3rem; }
+
+.section_title_wrap:not(.section_title_wrap_table) {
+  border-bottom: 1px solid #666;
+}
+.section_title {
+  font-size: 1.508rem;
+  display: inline-block;
+}
+.section_title, .section_title > span {
+  line-height: 42px;
+  font-weight: normal;
+  margin-bottom: 1.5rem;
+}
+.section_title, .sub_title {
+  color: #969595;
+}
+.sub_title_wrap { }
+.sub_title {
+  /* float가 아닌것 같은데.. */
+  float: left;
+  width: 100px;
+}
+.spoqa {
+  font-family: "Spoqa Han Sans";
+  letter-spacing: -0.01em;
+  word-spacing: 0.05em;
+}
+
+h1,h2,h3,h4,h5,h6, p { margin: 0; }
+h1 { font-size: 3.901rem; line-height: 4.5rem;  /*normalize*/} /* 41.59*1.313 = 54.60px*/
+h2 { font-size: 2.971rem; line-height: 4.5rem;} /* 31.68*1.313 = 41.59px */
+h3 { font-size: 2.263rem; line-height: 3.0rem;} /* 24.13*1.313 = 31.68px */
+h4 { font-size: 1.724rem; line-height: 3.0rem;} /* 18.38*1.313 = 24.13px */
+h5 { font-size: 1.313rem; line-height: 1.5rem;} /* 14*1.313 = 18.38px */
+h6 { font-size: 1rem;} /* 14px */
+
+/* ---------------layout---------------------------*/
+section {
+  float: left;
+  width: 800px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.para_contents { overflow: hidden; }
+
+/* table */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.table_2 .table_line_align { text-align: center; }
+.table_1 { margin-bottom: 12.5rem; }
+
+tr, td, th {
+    border-left: none;
+    border-right: none;
+    height: 3rem;
+    box-sizing: border-box;
+    text-align: center;
+}
+table tr>td:first-child { text-align: left; }
+
+.table_1 thead tr:first-child > th {
+    background-color: #ddd;
+    border-top: 1px solid #888;
+    border-bottom: 1px solid #888;
+}
+.table_2 thead tr:first-child > th {
+  border-bottom: 1px solid #888;
+}
+.table_1 tbody tr > td, .table_2 tbody tr > td {
+  border-bottom: 1px solid #888;
+}
+.table_2 tbody tr > td:nth-child(2+3) {
+  border-bottom: 1px solid #333;
+}
+
+
+/*-------------------- list style---------------------- */
+[class^="list_contents"] { float: left; margin: 0; }
+.list_contents_3 ul { list-style-type: none; }
+
+
+
+/*--------------------- color--------------- */
+.wrap {
+  width: 740px; /* 100*6(box크기) + 28*5(margin-right) */
+  height: 316px;
+}
+
+span { line-height: 14px; }
+
+.madeby {
+  margin-left: 550px;
+  color: #7171EF;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.box1_wrap, .box2_wrap, .box3_wrap, .box4_wrap, .box5_wrap, .box6_wrap,
+.box7_wrap, .box8_wrap, .box9_wrap, .box10_wrap, .box11_wrap {
+  height: 111px;
+  margin-right: 28px;
+  margin-bottom: 30px;
+  font-family: Helvetica;
+  font-size: 12px;
+  color: #2C2C2C;
+  letter-spacing: 1.2px;
+  float: left;
+}
+.wrap>div:nth-child(6) {
+  margin-right: 0;
+}
+
+/* common module */
+.box {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 11px;
+  line-height: 100px;
+  text-align: center;
+  color: #fff;
+}
+
+/* box background-color */
+.box1 { background: #FCB409; }
+.box2 { background: #63A2FC; }
+.box3 { background: #44CB83; }
+.box4 { background: #7171EF; }
+.box5 { background: #FF5448; }
+.box6 { background: #787F94; }
+.box7 { background: #666473; }
+.box8 { background: #8F9199; }
+.box9 { background: #B1B4C0; }
+.box10 { background: #D6D9DC; }
+.box11 { background: #F3F6FA; }

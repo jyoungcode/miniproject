@@ -8,33 +8,232 @@
   <meta name="description" content="ui kit style guide made by jyoungcode">
   <meta name="author" content="jyoungcode">
   <link rel="stylesheet" href="../Resources/webfonts/SpoqaHanSans-kr.css">
-  <link rel="stylesheet" href="../Resources/initialization/reset.css">
+  <link rel="stylesheet" href="../Resources/initialization/normalize.css">
+  <!-- <link rel="stylesheet" href="../Resources/common.css"> -->
   <link rel="stylesheet" href="css/uikit_style.css">
+  <link rel="stylesheet" href="css/grid_system_guideline.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,400italic" rel="stylesheet" type="text/css">
 </head>
-<body class="show-baseline">
-  <section>
-    <!-- validator 오류 안나는데 section 바깥에 h1아니고 div로 감싼것도되나?-->
-    <div class="typo_title">
-      <h1>TYPOGRAPHY</h1>
-      <span>14px &#047;타입 크기 배율&#058;X</span>
-    </div>
-    <div class="typo_contents">
-      <div class="sub_title">Header1</div><h1>당신의 꿈을 펼쳐보세요</h1>
-      <div class="sub_title">Header2</div><h2>당신의 꿈을 펼쳐보세요</h2>
-      <div class="sub_title">Header3</div><h3>당신의 꿈을 펼쳐보세요</h3>
-      <div class="sub_title">Header4</div><h4>당신의 꿈을 펼쳐보세요</h4>
-      <div class="sub_title">Header5</div><h5>당신의 꿈을 펼쳐보세요</h5>
-      <div class="sub_title">Header6</div><h6>당신의 꿈을 펼쳐보세요</h6>
-      <div class="sub_title">Paragraph</div>
-      <p>
-        반가운 얼굴도 등장한다. \u003c닥터 스트레인지\u003e를 기다리는 셜록 팬들을 또 한 번 환호하게 했을 마틴 프리먼의 등장은 꽤 신선하다. 정부와 히어로들 사이에서 어떤 역할을 해줄지 살짝 기대가 되기도. 새로운 얼굴도 있다.
-      </p>
-      <p>
-        고양이를 사랑하는 이들이 한 번쯤 관심 가질 블랙팬서와 역대 가장 원작 캐릭터의 성격을 잘 살려주고 있다고 생각되는 스파이더맨이 첫 등장을 하며 존재감을 확실히 굳혔다. 둘 다 솔로 영화 제작을 앞두고 있기에 더욱 관심 가는 캐릭터가 아닐 수 없는데, 굳이 따지자면 닥터 스트레인지와 각별한 관계인 스파이더맨에 더욱 기대가 실린다. 블랙팬서는 더 많은 비중으로 등장하지만, 짧게 등장한 스파이더맨에 비해 임팩트는 좀 덜한 듯했다
-      </p>
-    </div>
-  </section><!-- typography -->
+<body class="grid-container show-baseline spoqa">
+  <div class="section_div clearfix">
+    <section>
+      <!-- validator 오류 안나는데 section 바깥에 h1아니고 div로 감싼것도되나?-->
+      <div class="section_title_wrap mb_2">
+        <h1 class="section_title mr_1">TYPOGRAPHY</h1>
+        <span>14px &#047;타입 크기 배율&#058;X 1.313</span>
+      <!-- hr을 쓰지 않은 이유: html에서 문단 레벨 요소들 사이에서 주제의 분리를 나타내고 표현이 아닌 시멘틱관점 정의. -->
+      </div>
+      <div class="typo_contents">
+        <div class="sub_title_wrap mb_2">
+          <div class="sub_title">Header1</div><h1>당신의 꿈을 펼쳐보세요</h1>
+        </div>
+        <div class="sub_title_wrap mb_2">
+          <div class="sub_title">Header2</div><h2>당신의 꿈을 펼쳐보세요</h2>
+        </div>
+        <div class="sub_title_wrap mb_2">
+          <div class="sub_title">Header3</div><h3>당신의 꿈을 펼쳐보세요</h3>
+        </div>
+        <div class="sub_title_wrap mb_2">
+          <div class="sub_title">Header4</div><h4>당신의 꿈을 펼쳐보세요</h4>
+        </div>
+        <div class="sub_title_wrap mb_2">
+          <div class="sub_title">Header5</div><h5>당신의 꿈을 펼쳐보세요</h5>
+        </div>
+        <div class="sub_title_wrap mb_2">
+          <div class="sub_title">Header6</div><h6>당신의 꿈을 펼쳐보세요</h6>
+        </div>
+        <div class="sub_title">Paragraph</div>
+        <div class="para_contents">
+          <p class="mb_1">
+            반가운 얼굴도 등장한다. \u003c닥터 스트레인지\u003e를 기다리는 셜록 팬들을 또 한 번 환호하게 했을 마틴 프리먼의 등장은 꽤 신선하다. 정부와 히어로들 사이에서 어떤 역할을 해줄지 살짝 기대가 되기도. 새로운 얼굴도 있다.
+          </p>
+          <p class="mb_1">
+            고양이를 사랑하는 이들이 한 번쯤 관심 가질 블랙팬서와 역대 가장 원작 캐릭터의 성격을 잘 살려주고 있다고 생각되는 스파이더맨이 첫 등장을 하며 존재감을 확실히 굳혔다. 둘 다 솔로 영화 제작을 앞두고 있기에 더욱 관심 가는 캐릭터가 아닐 수 없는데, 굳이 따지자면 닥터 스트레인지와 각별한 관계인 스파이더맨에 더욱 기대가 실린다. 블랙팬서는 더 많은 비중으로 등장하지만, 짧게 등장한 스파이더맨에 비해 임팩트는 좀 덜한 듯했다
+          </p>
+        </div><!--para_contents-->
+      </div><!--typo_contents-->
+    </section><!-- typography -->
 
+    <section>
+      <div class="section_title_wrap_table  mb_1">
+      <!-- h1에 border를 주는게 적절한가? -->
+        <h1 class="section_title">TABLE</h1>
+      </div>
+      <div class="table_1">
+        <table>
+          <thead>
+            <tr>
+              <!-- 빈칸 접근성..? -->
+              <th>제목</th>
+              <th></th>
+              <th>종류</th>
+              <th>가격</th>
+              <th>수량</th>
+              <th>비고</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="pl_2">사망 플래그</td>
+              <td></td>
+              <td>도서</td>
+              <td>50,000</td>
+              <td>300</td>
+              <td>재고없음</td>
+            </tr>
+            <tr>
+              <td class="pl_2">설마 죽기야 하겠어</td>
+              <td></td>
+              <td>E-BOOK</td>
+              <td>50,000</td>
+              <td>&ndash;</td>
+              <td>&ndash;</td>
+            </tr>
+            <tr>
+              <td class="pl_2">이번이 정말 마지막이야</td>
+              <td></td>
+              <td>도서</td>
+              <td>50,000</td>
+              <td>212</td>
+              <td>재고없음</td>
+            </tr>
+            <tr>
+              <td class="pl_2">곧 돌아올게 기다려</td>
+              <td></td>
+              <td>도서</td>
+              <td>50,000</td>
+              <td>179</td>
+              <td>&ndash;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div><!-- table_1 -->
+      <div class="table_2">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th></th>
+              <th>가격</th>
+              <th>수량</th>
+              <th>비고</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="pl_2" rowspan="2">사망 플래그</td>
+              <td>도서</td>
+              <td>50,000</td>
+              <td>300</td>
+              <td>재고없음</td>
+            </tr>
+            <tr>
+              <td class="table_line_align">E-BOOK</td>
+              <td>50,000</td>
+              <td>&ndash;</td>
+              <td>&ndash;</td>
+            </tr>
+            <tr>
+              <td class="pl_2" rowspan="2">이번이 정말 마지막이야</td>
+              <td>도서</td>
+              <td>50,000</td>
+              <td>212</td>
+              <td>재고없음</td>
+            </tr>
+            <tr>
+              <td class="table_line_align">도서</td>
+              <td>50,000</td>
+              <td>179</td>
+              <td>&ndash;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div><!-- table_2-->
+    </section><!-- table -->
+  </div><!-- section_div -->
+
+  <div class="section_div clearfix">
+    <section>
+      <div class="section_title_wrap mb_2">
+        <h1 class="section_title">LIST STYLE</h1>
+      </div>
+      <ul class="list_contents_1">
+        <li>비순차 목록</li>
+        <ul>
+          <li>목록</li>
+          <li>목록</li>
+          <li>목록</li>
+        </ul>
+        <li>비순차 목록</li>
+        <li>비순차 목록</li>
+      </ul>
+      <ol class="list_contents_2">
+        <li>순차 목록</li>
+        <ol>
+          <li>목록</li>
+          <li>목록</li>
+          <li>목록</li>
+        </ol>
+        <li>순차 목록</li>
+        <li>순차 목록</li>
+      </ol>
+      <ul class="list_contents_3">
+        <li>창의적 문제해결</li>
+          <ul>
+            <li>더 향상된 결과를 위해, 폭넓은 시각에서 다양한 관점을 통합해 새로운 해결안을 제시함</li>
+          </ul>
+      </ul>
+    </section><!-- list -->
+
+    <section>
+      <div class="section_title_wrap mb_2">
+        <h1 class="section_title">COLOR</h1>
+        <span class="madeby">madeby JyoungCode</span>
+      </div>
+      <div class="wrap">
+        <div class="box1_wrap">
+          <div class="box1 box">#FCB409</div>
+          <span>WARNING</span>
+        </div>
+        <div class="box2_wrap">
+          <div class="box2 box">#FCB409</div>
+          <span>INFO</span>
+        </div>
+        <div class="box3_wrap">
+          <div class="box3 box">#FCB409</div>
+          <span>SUCCESS</span>
+        </div>
+        <div class="box4_wrap">
+          <div class="box4 box">#FCB409</div>
+          <span>PRIMARY</span>
+        </div>
+        <div class="box5_wrap">
+          <div class="box5 box">#FCB409</div>
+          <span>DANGER</span>
+        </div>
+        <div class="box6_wrap">
+          <div class="box6 box">#FCB409</div>
+          <span>DEFAULT</span>
+        </div>
+        <!-- notitle box -->
+        <div class="box7_wrap">
+          <div class="box7 box"></div>
+        </div>
+        <div class="box8_wrap">
+          <div class="box8 box"></div>
+        </div>
+        <div class="box9_wrap">
+          <div class="box9 box"></div>
+        </div>
+        <div class="box10_wrap">
+          <div class="box10 box"></div>
+        </div>
+        <div class="box11_wrap">
+          <div class="box11 box"></div>
+        </div>
+      </div><!-- wrap-->
+    </section><!-- color -->
+  </div><!-- section_div -->
 
 <!-- show-baseline을 shift+g로 토글가능 -->
 <script src="js/toggleBaseline.js"></script>
