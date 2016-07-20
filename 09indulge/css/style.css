@@ -1,0 +1,58 @@
+/*! style.css indulge jyoungcode */
+
+body {
+	width: 1200px;
+	height: 200vh;
+	margin-left: auto;
+	margin-right: auto;
+	/*background: url('../images/body.png');*/
+	font-size: 18px;
+	/*border: 1px solid black;*/
+}
+.clearfix::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.header_wrap > h1 {
+	margin-top: 120px; 
+	margin-bottom: 96px;
+	height: 48px;
+	text-align: center;
+	font-size: 50px;
+	color: #fff;
+	font-family: 'Indie Flower', cursive;
+}
+
+.nav_wrap {}
+.gnb {float: left; }
+.unb { float: right; }
+.gnb>ul, .unb>ul {
+	list-style-type: none;
+	box-sizing: border-box;
+	/*border: 1px solid black;*/
+}
+.gnb li { float: left; }
+.unb li { float: left; }
+.gnb a, .unb a {
+	text-decoration: none;
+	/*border: 1px solid black;*/
+	padding-right: 30px;
+	color: #fff;
+}
+.gnb a:hover, .unb a:hover {
+	/*font-weight: 900; 아직 trasition 지원 안하나? */
+	font-size: 19px;
+	transition: all 0.5s;
+}
+.unb span {
+	margin-left: 5px;
+}
+/*.main {
+	height: 100vh;  
+	background: #fff;
+}*/
+
+
+
