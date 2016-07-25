@@ -1,0 +1,369 @@
+// ----
+// libsass (v3.3.6)
+// ----
+
+/*! typography-grid-system-generator.sass @ yamoo9.net, 2016 */
+
+// ---------------------------------------------------------------------
+// 가이드라인, 단위 설정 변수
+// ---------------------------------------------------------------------
+
+// 10px 가이드라인을 사용하려면 true, 아니면 false
+$using-guide-10px: false
+// rem 단위를 사용하려면 true, 아니면 false
+$using-rem-unit: true
+// px 단위를 사용하려면 true, 아니면 false
+$using-px-unit: true
+
+// ---------------------------------------------------------------------
+// 페이지 화면 정렬 설정 변수
+// ---------------------------------------------------------------------
+
+// 페이지 정렬 설정
+// 왼쪽(left), 가운데(center), 오른쪽(right)
+$align-page: center
+
+// ---------------------------------------------------------------------
+// 타이포그래피 시스템 설정 변수
+// ---------------------------------------------------------------------
+
+// 기본 글자 크기
+$base-font-size: 16px
+// 기본 행간 비율(글자 대비)
+$base-line-height-ratio: 1.5
+// 기본 타입 스케일
+// 참고 URL: https://goo.gl/4gAnjs
+$base-type-scale: 1.250
+// 제목 스케일 설정
+$headings-scale: (h1:6, h2:5, h3:4, h4:3, h5:2, h6:1)
+// 버티컬 스페이싱 간격 설정 방향
+// 위(top), 아래(bottom)
+$vertical-spacing-direction: bottom
+// 기본 행간 크기 (자동 연산)
+$base-line-height: $base-font-size * $base-line-height-ratio
+
+// ---------------------------------------------------------------------
+// 그리드 시스템 설정 변수
+// ---------------------------------------------------------------------
+
+// 컬럼 개수
+$columns: 12
+// 컬럼 가로 폭
+$column-width: 100px
+// 거터 가로 폭(양쪽 방향 거터를 합친 값)
+$gutter-width: 0px
+// 거터 방향
+// 양쪽(split), 앞(before), 뒤(after), 안쪽(inside)
+$gutter-position: split
+
+// ---------------------------------------------------------------------
+// 가이드라인 설정 변수
+// ---------------------------------------------------------------------
+
+// 가이드 색상
+$guide-color: #ef400f
+// 가이드라인 그레디언트 색상 위치(라인이 안보일 경우 조정)
+$guideline-location: 95%
+// 가이드라인 컬러
+// ※ 알파 값(소수점)만 수정해야 합니다.
+$guideline-color: rgba($guide-color, 0.5)
+// 컬럼 컬러
+// ※ 알파 값(소수점)만 수정해야 합니다.
+$column-color: rgba($guide-color, 0.25)
+
+// ---------------------------------------------------------------------
+// 자동으로 설정되는 그리드 시스템 설정 변수
+// ※ 별도로 건들지 않아도 됩니다.
+// ---------------------------------------------------------------------
+
+// 가이드라인 높이
+$guideline-height: $base-line-height
+// 컬럼 + 거터 가로 폭 합
+$unit-width: $column-width + $gutter-width
+// 페이지 가로 폭
+$page-width: $columns * $unit-width
+
+$gutter-percentage: null
+$gutter-half-percentage: null
+$column-percentage: null
+
+@if $gutter-position == split or $gutter-position == inside
+  // 거터 절반 %
+  $gutter-half-percentage: percentage(($gutter-width/2)/$unit-width)
+  // 컬럼 %
+  $column-percentage: 100% - $gutter-half-percentage
+
+@if $gutter-position == before or $gutter-position == after
+  // 거터 절반 %
+  $gutter-percentage: percentage(($gutter-width)/$unit-width)
+  // 컬럼 %
+  $column-percentage: 100% - $gutter-percentage
+
+// ---------------------------------------------------------------------
+
+// 단위 제거 함수
+@function strip-units($unit)
+  @return $unit / ($unit * 0 + 1)
+
+// px → rem 변경 함수
+@function rem($px, $base: $base-font-size)
+  @if not unitless($px)
+    $px: strip-units($px)
+  @if not unitless($base)
+    $base: strip-units($base)
+  @return $px / $base * 1rem
+
+// 리스트 내부에 존재하는 단위를 rem으로 변경하여 리스트를 반환하는 함수
+// ※ background-size 속성에서 사용
+@function convert-rem-in-list($list)
+  $_list: ()
+  @each $number in $list
+    $_list: append($_list, rem($number))
+  @return  $_list
+
+// 『버티컬 리듬』 설정 함수
+@function vertical-rhythm($font-size, $base: $base-line-height-ratio)
+  $_ratio: $font-size/$base-font-size
+  @return floor($_ratio) * $base/$_ratio
+
+// 『모듈 스케일』 설정 함수
+@function module-scale($multiple: 1, $ratio: $base-type-scale)
+  $module: $base-font-size
+  $_ratio: 1
+  @for $i from 1 through $multiple
+    $_ratio: $_ratio * $ratio
+  @return $module * $_ratio
+
+// rem 단위를 지원하지 않는 웹 브라우저를 위한 믹스인
+// px, rem 단위 설정 변수에 따라 처리 결과가 달라집니다.
+=rem-fallback($key, $value)
+  @if type-of($value) == list
+    $px-list: ()
+    $convert-rem-list: ()
+    @for $i from 1 through length($value)
+      $px-list: append( $px-list, nth($value, $i), comma )
+      $convert-rem-list: append( $convert-rem-list, convert-rem-in-list(nth($value, $i)), comma )
+    @if $using-px-unit
+      #{$key}: $px-list
+    @if $using-rem-unit
+      #{$key}: $convert-rem-list
+  @else
+    @if $using-px-unit
+      #{$key}: $value
+    @if $using-rem-unit
+      #{$key}: rem($value)
+
+// 『버티컬 스페이싱』 Placeholder 선택자 상속
+%vertical-spacing
+  @if $vertical-spacing-direction == top
+    +rem-fallback(margin-top, $base-line-height)
+    margin-bottom: 0
+  @else
+    margin-top: 0
+    +rem-fallback(margin-bottom, $base-line-height)
+
+// ---------------------------------------------------------------------
+
+/* 문서 본문 설정 */
+html
+  font-size: if($base-font-size == 16px, 100%, $base-font-size)
+  line-height: $base-line-height-ratio
+
+body
+  margin: 0
+  min-height: 100vh // IE 9+
+
+// ---------------------------------------------------------------------
+
+/* h1-6 제목 설정 */
+// $headings 맵 초기 생성(임시 값 포함)
+$headings: (tmp:0)
+// $headings 맵 설정
+@each $heading, $ratio in $headings-scale
+  $_headings: ($heading: module-scale($ratio))
+  $headings: map-merge($headings, $_headings)
+// $headings 맵 완성(임시 값 제거)
+$headings: map-remove($headings, tmp)
+
+// 제목 설정 (맵 사용)
+@each $heading, $size in $headings
+  #{$heading}
+    @extend %vertical-spacing
+    +rem-fallback(font-size, ceil($size))
+    line-height: vertical-rhythm($size)
+
+// 단락, 목록, 정의 목록, 피규어, 인용, 디테일, 수평선, 필드셋, 보존, 표
+p, ul, ol, dl, dd, figure, blockquote, details, hr, fieldset, pre, table
+  @extend %vertical-spacing
+
+/* 목록 */
+ul
+  padding-left: 1em
+  padding-left: 1rem
+ol
+  padding-left: 1.6em
+  padding-left: 1.6rem
+
+/* 목록 2Depth 상,하 공간 제거 */
+ul ul, ol ol, ul ol, ol ul
+  margin:
+    top: 0
+    bottom: 0
+
+/* 링크 */
+a
+  background-color: transparent
+
+/* 수평선 */
+hr
+  margin: -1px 0
+  border: 1px solid
+
+/* 인라인 요소 행간 설정 */
+b, strong, em, small, code
+  line-height: 1
+
+/* 윗첨자, 아랫첨자 */
+sup, sub
+  position: relative
+  font-size: 75%
+  line-height: 0
+  vertical-align: baseline
+sup
+  top: -0.5em
+sub
+  bottom: -0.25em
+
+/* 코드 */
+pre, code, kbd, samp
+  font-size: 100%
+
+/* 축약 */
+abbr[title]
+  cursor: help
+  border-bottom: 1px dotted
+  text-decoration: none
+
+b, strong
+  font-weight: bold
+
+/* 표 */
+table
+  border-collapse: collapse
+  border-spacing: 0
+  width: 100%
+
+th, td
+  border-bottom: 1px solid
+  text-align: left
+
+thead th
+  vertical-align: bottom
+
+// ---------------------------------------------------------------------
+
+/* 컨테이너, CONTAINER */
+.container, .grid
+  position: relative
+  @if $gutter-position == split or $gutter-position == inside
+    +rem-fallback(width, $page-width)
+  @if $gutter-position == before or $gutter-position == after
+    +rem-fallback(width, $page-width - $gutter-width)
+  // height: 100vh // IE 9+
+  @if $align-page == center
+    margin:
+      left: auto
+      right: auto
+  @if $align-page == right
+    margin-left: auto
+
+  &:before,&::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 0
+    @if $gutter-position == split
+      background: linear-gradient(180deg, transparent $guideline-location, $guideline-color $guideline-location), linear-gradient(90deg, transparent $gutter-half-percentage, $column-color $gutter-half-percentage, $column-color $column-percentage, transparent $column-percentage)
+    @if $gutter-position == before
+      background: linear-gradient(180deg, transparent $guideline-location, $guideline-color $guideline-location), linear-gradient(90deg, $column-color $column-percentage, transparent $column-percentage)
+    @if $gutter-position == after
+      background: linear-gradient(180deg, transparent $guideline-location, $guideline-color $guideline-location), linear-gradient(90deg, $column-color $column-percentage, transparent $column-percentage)
+    @if $gutter-position == inside
+      background: linear-gradient(180deg, transparent $guideline-location, $guideline-color $guideline-location), linear-gradient(90deg, lighten($column-color, 20%) $gutter-half-percentage, $column-color $gutter-half-percentage, $column-color $column-percentage, lighten($column-color, 35%) $column-percentage)
+
+    +rem-fallback(background-size, ($guideline-height $guideline-height, $unit-width $unit-width))
+    transition: height 0.2s ease-out
+
+  &.guide-10
+    &:before,&::before
+      +rem-fallback(background-size, (10px 10px, $unit-width $unit-width))
+  &.guide:hover,&.show-guide
+    &:before,&::before
+      height: 100vh // IE 9+
+
+// ---------------------------------------------------------------------
+
+/* 행, ROW */
+.row, .clearfix
+  &:after, &::after
+    content: ''
+    display: block
+    clear: both
+
+// ---------------------------------------------------------------------
+
+/* 열, COLUMN */
+[class*="col-"]
+  float: left
+  @if $gutter-position == split
+    +rem-fallback(margin-left, $gutter-width/2)
+    +rem-fallback(margin-right, $gutter-width/2)
+  @if $gutter-position == before
+    +rem-fallback(margin-left, $gutter-width)
+    &.first, &.alpha
+      margin-left: 0
+  @if $gutter-position == after
+    +rem-fallback(margin-right, $gutter-width)
+    &.last, &.omega
+      margin-right: 0
+  @if $gutter-position == inside
+    &.gutter
+      +rem-fallback(padding-left, $gutter-width/2)
+      +rem-fallback(padding-right, $gutter-width/2)
+
+/* .col-* 설정 */
+@for $i from 1 through $columns
+  .col-#{$i}
+    +rem-fallback( width, $column-width * $i + $gutter-width * ($i - 1) )
+
+// ---------------------------------------------------------------------
+
+/* 푸시 | 풀, PUSH | PULL */
+[class*="push-"],[class*="pull-"]
+  position: relative
+
+/* .push-* 설정 */
+@for $i from 1 through $columns
+  .push-#{$i}
+    +rem-fallback( left, $column-width * $i + $gutter-width * $i )
+
+/* .pull-* 설정 */
+@for $i from 1 through $columns
+  .pull-#{$i}
+    +rem-fallback( left, -1 * ($column-width * $i + $gutter-width * $i) )
+
+// ---------------------------------------------------------------------
+
+/* 프리픽스 | 서픽스, PREFIX | SUFFIX */
+
+/* .prefix-* 설정 */
+@for $i from 1 through $columns
+  .prefix-#{$i}
+    +rem-fallback( padding-left, $column-width * $i + $gutter-width * $i )
+
+/* .suffix-* 설정 */
+@for $i from 1 through $columns
+  .suffix-#{$i}
+    +rem-fallback( padding-right, $column-width * $i + $gutter-width * $i )

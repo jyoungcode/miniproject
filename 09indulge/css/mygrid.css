@@ -1,0 +1,45 @@
+/*! customized mygrid.css © JyoungCode, 2016 
+* original author - w3
+*/
+
+.container:after,.row:after,.row-padding:after,.topnav:after,.clear:after,.btn-group:before,.btn-group:after,.btn-bar:before,.btn-bar:after
+{content:"";display:table;clear:both}
+.unit,.half,.third,.twothird,.threequarter,.quarter{float:left;width:100%}
+.unit.s1{width:8.33333%}
+.unit.s2{width:16.66666%}
+.unit.s3{width:24.99999%}
+.unit.s4{width:33.33333%}
+.unit.s5{width:41.66666%}
+.unit.s6{width:49.99999%}
+.unit.s7{width:58.33333%}
+.unit.s8{width:66.66666%}
+.unit.s9{width:74.99999%}
+.unit.s10{width:83.33333%}
+.unit.s11{width:91.66666%}
+.unit.s12,.half,.third,.twothird,.threequarter,.quarter{width:99.99999%}
+@media only screen and (min-width:601px){
+.unit.m1{width:8.33333%}
+.unit.m2{width:16.66666%}
+.unit.m3,.quarter{width:24.99999%}
+.unit.m4,.third{width:33.33333%}
+.unit.m5{width:41.66666%}
+.unit.m6,.half{width:49.99999%}
+.unit.m7{width:58.33333%}
+.unit.m8,.twothird{width:66.66666%}
+.unit.m9,.threequarter{width:74.99999%}
+.unit.m10{width:83.33333%}
+.unit.m11{width:91.66666%}
+.unit.m12{width:99.99999%}}
+@media only screen and (min-width:993px){
+.unit.l1{width:8.33333%}
+.unit.l2{width:16.66666%}
+.unit.l3,.quarter{width:24.99999%}
+.unit.l4,.third{width:33.33333%}
+.unit.l5{width:41.66666%}
+.unit.l6,.half{width:49.99999%}
+.unit.l7{width:58.33333%}
+.unit.l8,.twothird{width:66.66666%}
+.unit.l9,.threequarter{width:74.99999%}
+.unit.l10{width:83.33333%}
+.unit.l11{width:91.66666%}
+.unit.l12{width:99.99999%}}

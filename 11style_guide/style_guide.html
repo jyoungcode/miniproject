@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8">
+  <title>Style Guide&#124;JyoungCode</title>
+  <link rel="stylesheet" href="../Resources/initialization/normalize.css">
+  <link rel="stylesheet" href="../Resources/webfonts/SpoqaHanSans-kr.css">
+  <link rel="stylesheet" href="../Resources/common.css">
+  <link rel="stylesheet" href="../Resources/ionicons/ionicons.min.css">
+  <link rel="stylesheet" href="css/codestyle.css">
+<style>
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+
+.flex-container > * {
+    /*padding: 15px;*/
+    -webkit-flex: 1 100%;
+    flex: 1 100%;
+}
+
+.article {
+    text-align: left;
+}
+
+header {background: black; color:white;}
+footer {background: #aaa; color:white;}
+.nav {background:#eee;}
+.nav h3 { border: 1px solid black;}
+.nav li { border: 1px solid black; }
+
+.nav ul {
+  list-style-type: none;
+  padding: 0;
+  border: 1px solid black;
+}
+
+.nav ul a {
+  display: block;
+  text-decoration: none;
+  color: #074dc4;
+
+}
+
+@media screen and (min-width: 768px) {
+    .nav {text-align:left;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
+    .article {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
+    footer {-webkit-order:3;order:3;}
+}
+</style>
+</head>
+<body>
+<div class="flex-container">
+  <header>
+    <h1>Coding Style Guide by @jyoungcode</h1>
+    <h2>HTML &#047; CSS</h2>
+  </header>
+
+<nav class="nav">
+  <h3>목차</h3>
+  <ul>
+    <li><a href="#">London</a></li>
+    <li><a href="#">Paris</a></li>
+    <li><a href="#">Tokyo</a></li>
+  </ul>
+</nav>
+
+<article class="article">
+
+</article>
+
+<footer>Made By JyoungCode</footer>
+</div><!-- flex-container -->
+
+</body>
+</html>

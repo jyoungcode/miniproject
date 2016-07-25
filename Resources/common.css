@@ -1,15 +1,17 @@
 /*! common.css © yamoo9.net, 2016 */
 
 /* 목록 초기화 재사용 가능한 스타일 모듈 */
-.reset-list ul,
-.reset-list ol,
-ul.reset-list,
-ol.reset-list {
+.reset-list-group ul,
+.reset-list-group ol,
+ul.reset-list-group,
+ol.reset-list-group {
   margin-top:    0;
   margin-bottom: 0;
   padding-left:  0;
   list-style: none;
 }
+
+a { text-decoration: none; }
 
 /*이미지 하단의 공백을 제거하는 속성*/
 img {
@@ -17,15 +19,53 @@ img {
   vertical-align: bottom;
 }
 
-/* ì´ë¯¸ì§€ í•˜ë‹¨ì— ê³µë°±ì„ í˜•ì„±í•˜ì—¬ ì˜†ìœ¼ë¡œ ë°°ì¹˜ë˜ëŠ” ê¸€ë“¤ì´ ë™ì¼í•œ ê³µê°„ì„ ê°€ì§ˆ ìˆ˜ ìžˆë„ë¡ ì„¤ì • */
 .blank-bottom-img img + *,
 img.blank-bottom + * {
   overflow: hidden;
 }
 
-img.flex-img {
+
+img.flex-img, img.rwd-img, video.rwd-video {
   width: 100%;
-  height: auto;
+  height: auto; /* 높이를 자동으로 설정 컨텐츠 height:100%는 적용되지 않는다!*/
+}
+
+img.keep-original-scale {
+  max-width: 100%;
+}
+
+/* 배경 이미지(CSS)에 적용되는 Fluid BG Image */
+.rwd-img-3-4 {
+  width: 100%;
+  padding-bottom: 75%;
+  background-size: cover;
+  background-position: center center;
+}
+.rwd-img-9-16 {
+  width: 100%;
+  padding-bottom: 56.25%;
+  background-size: cover;
+  background-position: center center;
+}
+
+.rwd-media-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  /*
+    스크린 비율(가로x세로)
+    4:3  = 75%
+    16:9 = 56.25%
+    21:9 = 42.857142857%;
+  */
+  /*padding-top: 30px;*/
+  padding-bottom: 56.25%;
+}
+.rwd-media {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
 
 img.horizontal-center-img {
@@ -33,7 +73,6 @@ img.horizontal-center-img {
   transform: translateX(-50%);
 }
 
-/* í´ë¦¬ì–´ í”½ìŠ¤ */
 .clearfix::after,
 .cf::after {
   content: '';
@@ -63,3 +102,5 @@ img.horizontal-center-img {
   height:   auto;
   margin:   0;
 }
+
+
