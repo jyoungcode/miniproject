@@ -1,0 +1,35 @@
+/*! entire.sass @jyoungcode , 2016 */
+
+.readable-hidden
+	overflow: hidden
+	position: absolute
+	width:    1px
+	height:   1px
+	margin:   -1px
+	border:   0
+	padding:  0
+
+.readable-hidden.focusable:focus
+	overflow: visible
+	position: static
+	clip:     auto
+	width:    auto
+	height:   auto
+	margin:   0
+
+.gnb
+	+reset-list-group
+
+=reset-list-group
+	margin-top: 0
+	margin-bottom: 0
+	padding-left: 0
+	list-style: none
+	li
+		float: left
+	a
+		text-decoration: none
+
+
+
+

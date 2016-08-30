@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html lang="ko" class="no-js old ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko" class="no-js modern ie9"><![endif]-->
+<!--[if !IE]><!--><html lang="ko-KR" class="no-js custom"><!--<![endif]-->
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>랜덤 데이터 생성기</title>
+  <!-- <script src="js/modernizr.min.js"></script> -->
+  <!-- <script src="js/jquery.min.js"></script> -->
+  <!-- <script src="js/random.js"></script> -->
+  <link rel="stylesheet" href="../Resources/initialization/reset.css">
+  <link rel="stylesheet" href="../Resources/common.css">
+  <link rel="stylesheet" href="../Resources/webfonts/SpoqaHanSans-kr.css">
+  <link rel="stylesheet" href="../Resources/ionicons/ionicons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/grid-1240-flex.css">
+</head>
+<body>
+<!-- nav 읽어주는 제목 있어야 하지 않나 -->
+<!-- div 같이 헷갈리기 쉬운 요소에 주석으로 시작과 끝을 정리하자 -->
+		<header class="clearfix grid">
+			<!-- [start] wrap-nav -->
+			<div class="wrap-nav grid grid-container">
+				<h1 class="unit-3">
+					<a href="#" class="header-logo">FDS.USER.API</a>
+				</h1>
+
+				<nav class="lnb unit-3 ml">
+					<ul class="clearfix">
+						<li class="mr"><a href="#">HOME</a></li>
+						<li><a href="#">사용방법</a></li>
+					</ul>
+				</nav>
+				<div class="link-menu ml unit-2 push-4"><a href="#" class="ion-social-github"></a></div>
+			</div><!-- [end] wrap-nav -->
+		</header>
+
+		<main class="clearfix">
+			<div class="main-bg">
+				<div class="main-text unit-12">
+					<h2 class="">프로토타입 제작을 위한<br>랜덤 한국인 사용자 데이터 생성기</h2>
+					<button type="button" class="btn-api">API 주소 바로 복사하기</button>
+				</div>
+			</div><!-- main-bg -->
+			<div class="main-bg-2">
+				<div class="main-user unit-6">
+					<div class="main-user-title clearfix">
+						<h3>랜덤 사용자</h3>
+						<button type="button" class="ion-refresh"></button>
+					</div><!-- main-user-title -->
+					<div class="main-user-info-wrap clearfix">
+						<div class="main-user-img">
+							<img src="images/user.jpg" alt="사용자">
+						</div>
+						<ul class="main-user-info">
+							<li>이름<span>유정식</span></li>
+							<li>생년월일<span>1989/09/30</span></li>
+							<li>성별<span>남자</span></li>
+							<li>전화번호<span>010-3485-4685</span></li>
+							<li>주소<span>경북 김천시 시청로 123</span></li>
+						</ul>
+						</div><!-- main-user-info-wrap -->
+				</div><!-- main-user -->
+			</div><!-- main-bg-2 -->
+			<div class="contents grid grid-container clearfix">
+				<div class="content-inner unit-11">
+					<h4>사용방법</h4>
+					<p>
+						여러분은 AJAX를 통해 사용자 API를 사용 할 수 있고,<br>
+						무작위로 생성된 사용자 정보를 JSON형태로 받을 수 있습니다.
+					</p>
+					<pre>
+						<code>
+$.ajax({
+	url: 'http://randomuser.me/api',
+	dataType: 'json',
+	success: function(data){
+		console.log(data);
+	}
+});
+						</code>
+					</pre>
+				</div><!-- content-inner -->
+
+				<div class="content-inner unit-11">
+					<h4>결과</h4>
+					<pre>
+						<code>
+{
+	"result": [
+	{
+		"gender": "남자",
+		"name" : "유정식",
+		"location" : {
+			"street" : "시청로93",
+			"city" : "김천시",
+			"state" : "경상북도",
+			"postcode" : "69217"
+		},
+		"email" : "abcd@domain.com",
+		"login" : {
+			"username" : "lazyduck408",
+			"password" : "jokers"
+		},
+		"birth" : "1983-07-14 07:29:45",
+		"registered" : "2010-09-24 02:10:42",
+		"phone" : "(010)-976-4980",
+		"cell" : "(054)-247-9303",
+		"id" : {
+			"name" : "BSN",
+			"value" : "04242023"
+		},
+		"picture" : {
+			"large" : "https://randomuser.me/api/portraits/men/83.jpg",
+			"medium" : "https://randomuser.me/api/portraits/med/men/83.jpg",
+			"thumbnail" : "https://randomuser.me/api/portraits/men/83.jpg" 
+		}
+	}
+	]
+}
+						</code>
+					</pre>
+				</div><!-- content-inner -->
+			</div><!-- contents -->
+		</main>
+
+		<footer>
+			<p>만든 사람들 dibyp, jyoungcode, eatdesignlove</p>
+		</footer>
+</body>
+</html>

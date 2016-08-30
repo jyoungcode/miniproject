@@ -1,0 +1,40 @@
+/*! box_shape.css @jyoungcode, 2016 */
+.shape-wrap {
+  position: relative;
+  width: 595.8px;
+  height: 595.7px;
+}
+
+.circle {
+  position: absolute;
+  width: 595.8px;
+  height: 595.7px;
+  border-radius: 297.9px;
+  background: #0de0fc;
+  border: solid 1px #0de0fc;
+  opacity: 0.1;
+}
+
+.circle-two {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 496.5px;
+  height: 496.41667px;
+  border-radius: 297.9px;
+  border: solid 1px #0de0fc;
+  opacity: 0.5;
+}
+
+.circle-three {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 397.2px;
+  height: 397.13333px;
+  border-radius: 297.9px;
+  border: solid 1px #0de0fc;
+  opacity: 1;
+}

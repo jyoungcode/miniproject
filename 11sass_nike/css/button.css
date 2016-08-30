@@ -1,0 +1,10 @@
+/*! button.sass @jyoungcode */
+.btn-rounded {
+  width: 480.3px;
+  height: 100px;
+  border-radius: 50px;
+  background-color: #0de0fc;
+  text-align: center;
+  line-height: 100px;
+  font-size: 24px;
+}

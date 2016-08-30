@@ -85,6 +85,8 @@ img.horizontal-center-img {
   zoom: 1;
 }
 
+/* table caption과 같이 영역 자체를 없앨때는 readable-hidden을 사용
+이미지 아이콘 추가에 텍스트만 사라지게하려면 hidden-text 를 사용하자 */
 .readable-hidden {
   overflow: hidden;
   /* position: absolute; */
@@ -103,4 +105,4 @@ img.horizontal-center-img {
   margin:   0;
 }
 
-
+.hidden_text { text-indent: -9999px; }

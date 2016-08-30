@@ -1,0 +1,169 @@
+@charset "utf-8";
+
+/**
+ * Grid 
+ * width : 960px ( 100%로 바꿈 )
+ * column : 12 
+ * unit : 60px  ( 6.25% )
+ * gutter : 20 px ( 11 count ) ( 2.083333 % )
+ * base-font-size: 16px
+ * base-leading-ratio: 1.5 ( ling-height: 24px )
+ * gutter-direction: after ( margin-right ) 
+ * gutter-first-last-sides : none
+ * /
+
+ /**
+  * overlay grid guideline module
+  */
+	.grid-container::after {
+		content: '';
+		position: absolute;
+		z-index: 10000;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+	.grid-container[class*="show-grid"]::after {
+		height: 500vh;
+	}
+
+	.grid-container.show-grid::after {
+		/*margin-left: 11.935483%;*/
+		/*padding-right: 11.935483%;*/
+		background: linear-gradient(90deg, rgba(191, 64, 64, 0.3) 76%, rgba(0, 0, 0, 0) 76%), linear-gradient(transparent 23px, #26923f 23px);
+		background-size: 8.333334% 1px, 1px 24px;
+	}
+
+	/**
+	 * --------------------------------
+	 * Grid Container Module
+	 * ----------------------------- */
+	.grid-container {
+	  position: relative;
+	  width: 100%;
+	  /*max-width: 1240px;*/
+	  max-width: 960px;
+	  margin-left: auto;
+	  margin-right: auto;
+	}
+
+	/**
+	 * --------------------------------
+	 * Grid Module
+	 * ----------------------------- */
+	.grid::after {
+	  content: '';
+	  display: block;
+	  clear: both;
+	}
+
+	/**
+	 * --------------------------------
+	 * Unit Module
+	 * ----------------------------- */
+	.grid [class*="unit-"] {
+	  box-sizing: border-box;
+	  float: left;
+	}
+	.grid .last, .grid .omega { margin-right: 0; }
+	.grid .unit-1 { width: 6.25%; }
+	.grid .unit-2 { width: 14.583334%; }
+	.grid .unit-3 { width: 22.916668%; }
+	.grid .unit-4 { width: 31.250002%; }
+	.grid .unit-5 { width: 39.583336%; }
+	.grid .unit-6 { width: 47.91667%; }
+	.grid .unit-7 { width: 56.250004%; }
+	.grid .unit-8 { width: 64.583338%; }
+	.grid .unit-9 { width: 72.916672%; }
+	.grid .unit-10 { width: 81.250006%; }
+	.grid .unit-11 { width: 89.583340%; }
+	.grid .unit-12 { width: 100%; } /* + gutter */
+
+	/**
+	 * --------------------------------
+	 * Push, Pull Module
+	 * ----------------------------- */
+	.grid [class*="push-"], .grid [class*="pull-"] { position: relative; }
+	.grid .push-1 { left: 8.333334%; }
+	.grid .push-2 { left: 16.666668%; }
+	.grid .push-3 { left: 25.000002%; }
+	.grid .push-4 { left: 33.333336%; }
+	.grid .push-5 { left: 41.666667%; }
+	.grid .push-6 { left: 50.000004%; }
+	.grid .push-7 { left: 58.333338%; }
+	.grid .push-8 { left: 66.666672%; }
+	.grid .push-9 { left: 75.000006%; }
+	.grid .push-10 { left: 83.333340%; }
+	.grid .push-11 { left: 91.666674%; }
+	.grid .push-12 { left: 100%; }
+
+	.grid .pull-1 { right: 8.333334%; }
+	.grid .pull-2 { right: 16.666668%; }
+	.grid .pull-3 { right: 25.000002%; }
+	.grid .pull-4 { right: 33.333336%; }
+	.grid .pull-5 { right: 41.666667%; }
+	.grid .pull-6 { right: 50.000004%; }
+	.grid .pull-7 { right: 58.333338%; }
+	.grid .pull-8 { right: 66.666672%; }
+	.grid .pull-9 { right: 75.000006%; }
+	.grid .pull-10 { right: 83.333340%; }
+	.grid .pull-11 { right: 91.666674%; }
+	.grid .pull-12 { right: 100%; }
+
+	/**
+	 * --------------------------------
+	 * Prefix, Suffix Module
+	 * margin
+	 * padding
+	 * ----------------------------- */
+	.grid .prefix-1 { margin-left: 8.333334%; }
+	.grid .prefix-2 { margin-left: 16.666668%; }
+	.grid .prefix-3 { margin-left: 25.000002%; }
+	.grid .prefix-4 { margin-left: 33.333336%; }
+	.grid .prefix-5 { margin-left: 41.666667%; }
+	.grid .prefix-6 { margin-left: 50.000004%; }
+	.grid .prefix-7 { margin-left: 58.333338%; }
+	.grid .prefix-8 { margin-left: 66.666672%; }
+	.grid .prefix-9 { margin-left: 75.000006%; }
+	.grid .prefix-10 { margin-left: 83.333340%; }
+	.grid .prefix-11 { margin-left: 91.666674%; }
+	.grid .prefix-12 { margin-left: 100%; }
+
+	.grid .suffix-1 { margin-right: 8.333334%; }
+	.grid .suffix-2 { margin-right: 16.666668%; }
+	.grid .suffix-3 { margin-right: 25.000002%; }
+	.grid .suffix-4 { margin-right: 33.333336%; }
+	.grid .suffix-5 { margin-right: 41.666667%; }
+	.grid .suffix-6 { margin-right: 50.000004%; }
+	.grid .suffix-7 { margin-right: 58.333338%; }
+	.grid .suffix-8 { margin-right: 66.666672%; }
+	.grid .suffix-9 { margin-right: 75.000006%; }
+	.grid .suffix-10 { margin-right: 83.333340%; }
+	.grid .suffix-11 { margin-right: 91.666674%; }
+	.grid .suffix-12 { margin-right: 100%; }
+
+	.grid .padding-prefix-1 { padding-left: 8.333334%; }
+	.grid .padding-prefix-2 { padding-left: 16.666668%; }
+	.grid .padding-prefix-3 { padding-left: 25.000002%; }
+	.grid .padding-prefix-4 { padding-left: 33.333336%; }
+	.grid .padding-prefix-5 { padding-left: 41.666667%; }
+	.grid .padding-prefix-6 { padding-left: 50.000004%; }
+	.grid .padding-prefix-7 { padding-left: 58.333338%; }
+	.grid .padding-prefix-8 { padding-left: 66.666672%; }
+	.grid .padding-prefix-9 { padding-left: 75.000006%; }
+	.grid .padding-prefix-10 { padding-left: 83.333340%; }
+	.grid .padding-prefix-11 { padding-left: 91.666674%; }
+	.grid .padding-prefix-12 { padding-left: 100%; }
+
+	.grid .padding-suffix-1 { padding-right: 8.333334%; }
+	.grid .padding-suffix-2 { padding-right: 16.666668%; }
+	.grid .padding-suffix-3 { padding-right: 25.000002%; }
+	.grid .padding-suffix-4 { padding-right: 33.333336%; }
+	.grid .padding-suffix-5 { padding-right: 41.666667%; }
+	.grid .padding-suffix-6 { padding-right: 50.000004%; }
+	.grid .padding-suffix-7 { padding-right: 58.333338%; }
+	.grid .padding-suffix-8 { padding-right: 66.666672%; }
+	.grid .padding-suffix-9 { padding-right: 75.000006%; }
+	.grid .padding-suffix-10 { padding-right: 83.333340%; }
+	.grid .padding-suffix-11 { padding-right: 91.666674%; }
+	.grid .padding-suffix-12 { padding-right: 100%; }

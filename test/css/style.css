@@ -1,0 +1,99 @@
+/*! style.css © yamoo9.naver.com */
+/*	==========================================================================
+	Web Fonts
+	========================================================================== */
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+
+/*	==========================================================================
+	Default
+	========================================================================== */
+/* 브라우저 공간 설정 초기화 */
+body * { margin: 0; padding: 0; }
+
+
+/*	==========================================================================
+	Typography
+	========================================================================== */
+body {
+	/* 본문 크기 설정: 0.875em = 14px */
+	font: 0.875em/1.5 "나눔 고딕", "Nanum Gothic", 돋움, Dotum, sans-serief;
+	/* 본문 색상 */
+	color: #3e454c;
+}
+
+/* 본문 설정 */
+p {
+	margin-bottom: 1.5em;
+	letter-spacing: -0.067em; /* 1000 === 1em */
+	word-spacing: 0.21em;
+}
+
+/* 영문 자간 설정 */
+:lang(en) { letter-spacing: 0; }
+
+/* 글꼴 */
+.nanum-gothic        { font-family: "나눔 고딕", "Nanum Gothic"; }
+.malgun-gothic       { font-family: "맑은 고딕", "Malgun Gothic"; }
+.apple-sd-gothic-neo { font-family: "애플 산돌고딕 네오", "Apple SD Gothic Neo"; }
+
+/* 제목 크기 */
+h1 { font-size: 42px; }
+h2 { font-size: 36px; }
+h3 { font-size: 24px; }
+h4 { font-size: 21px; }
+h5 { font-size: 18px; }
+h6 { font-size: 16px; }
+
+/* 행간 설정 */
+h1, h2 { line-height: 42px; }
+h3, h4, h5, h6 { line-height: 21px; }
+
+/* 제목 아래 공간 설정 */
+h1, h2, h3, h4, h5, h6 { margin-bottom: 21px; }
+
+/* 링크 설정 */
+a:link, a:visited { color: #652eca; text-decoration: none; }
+a:hover, a:focus  { color: #5b4682; text-decoration: underline; }
+a:active          { color: #652eca; background-color: #ece3fb; }
+a.deactive        { color: #bababa; }
+a:focus, a:active { outline: none; } /* 아웃라인 제거 */
+
+
+
+/*	==========================================================================
+	Layout & UI
+	========================================================================== */
+body {
+	/* 최대 문서 폭 720px, 가운데 정렬 */
+	width: 82%;
+	max-width: 720px;
+	min-width: 320px;
+	margin: 3em 3em 1.5em;
+
+	/* 배경 패턴 Baseline */
+	background: url(../images/bg-baseline-21.gif);
+}
+
+/* 베이스라인 제거 토글 버튼용 : 클래스 */
+body.remove-baseline { background-image: none; }
+
+/* 토글 버튼 */
+.toggle-btn {
+	cursor: pointer;
+	display: inline-block;
+	padding: 1.1em;
+	border: none;
+	border-radius: 4px;
+	background-color: #54c3e0;
+	font-size: 12px;
+	color: #fff;
+}
+.toggle-btn:hover,
+.toggle-btn:focus { background-color: #046380; }
+.toggle-btn:active {
+	position: relative;
+	top: 1px;
+}
+.toggle-btn:focus,
+.toggle-btn:active { outline: none; }

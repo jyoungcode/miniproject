@@ -87,7 +87,8 @@
   position: relative;
 }
 
-.push-1 { left: 160px; } /* unit: margin-left:30px 합친값 */
+ /* unit: margin-left:30px 합친값 */
+.push-1 { left: 160px; }
 .push-2 { left: 320px; }
 .push-3 { left: 480px; }
 .push-4 { left: 640px; }
