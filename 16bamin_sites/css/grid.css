@@ -1,0 +1,42 @@
+/* grid.css @jyoungcode - bamin copy, 2016 */
+
+.row {}
+
+/*로그인 팝업*/
+.col-lg-9 {}
+.col-sm-9 {}
+.col-xs-8 {}
+.col-lg-3 {}
+.col-sm-3 {}
+.col-xs-4 {}
+.col-lg-2 {}
+.col-xs-3 {}
+.col-lg-10 {}
+.col-xs-9 {}
+
+.col-lg-offset-2 {}
+.col-lg-10 {}
+.col-xs-12 {}
+.col-lg-12 {}
+.col-xs-12 {}
+
+.col-md-6 {}
+.col-xs-12 {}
+.col-sm-12 {}
+.col-md-6 {}
+.col-xs-12 {}
+.col-md-6 {}
+.col-xs-12 {}
+.col-md-6 {}
+.col-xs-12 {}
+.col-lg-6 {}
+.col-sm-12 {}
+
+.hidden-xs {}
+.hidden-sm {}
+
+.xsmall {}
+
+/* 메인 컨테이너 동그라미 */
+.col1 {}
+.col2 {}

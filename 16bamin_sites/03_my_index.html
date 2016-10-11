@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<!-- UTF-8, title이 우선으로 나온다 -->
+  <meta charset="UTF-8">
+  <title>My 배민 update</title>
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"> 왜 chrome 설정시 validator 오류?-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 캐쉬를 설정 -->
+  <meta name="Cache-Control" content="max-age=300">
+  <!-- 모바일 최적화 환경 설정 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 이건 뭔가.? -->
+  <meta name="format-detection" content="telephone=no">
+  <meta name="keywords" content="배달의민족, 배달, 배달음식점, 배달음식, 배달주문, 배달지역, 배달음식추천, 배달음식검색, 추천배달음식, 음식배달, 검색배달, 맛집, 포장음식추천, 야식추천, 야식, 야식메뉴, 배달사이트, 맛있는야식, 밤참, 내 주변 배달음식, 동네맛집, 동네배달, 맛집배달, 우리동네배달, 맛집배달, delivery, Korea derivery food, 전국배달, 부산배달, 해운대배달, 강남배달, 내 주변 맛집, 할인쿠폰, 인터넷주문, 온라인주문, 인터넷배달,  핸드폰결제배달음식, 휴대폰결제배달음식, 소액결제배달, 핸드폰주문, 휴대폰주문, 24시간 배달,  24시야식, 24시배달, 새벽맛집, 배달메뉴, 카드배달, 포인트적립 배달, 한그릇 배달, 도시락배달, 야식, 야식배달, 피자배달, 배달도시락, 족발배달, 중국집배달, 한식배달, 패스트푸드, 돈까스배달, 일식배달, 프랜차이즈배달, 탕배달, 치킨배달, 분식배달, 보쌈배달">
+  <meta name="description" content="배달의민족은 자동 위치설정, 검색을 통해 원하는 배달음식, 업소를 쉽게 찾고메뉴이미지, 리뷰 등의 다양한 정보를 제공합니다. 또한 주문에서 결제까지 한번에! 끝낼 수 있도록 도와드립니다.더 간편하게 원하는 음식을 주문하세요.">
+  <meta property="og:title" content="대한민국 1등 배달어플 배달의민족">
+  <meta property="og:site_name" content="대한민국 1등 배달어플 배달의민족">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://www.baemin.com/index.php">
+  <meta property="og:image" content="http://woowahan1.vipweb.kr/cache/baemin/fb/common/baemin.jpg">
+  <meta property="og:description" content="내 주변의 배달 음식점을 찾아주고, 바로 주문/결제 까지 할 수 있어요. 주문 전 실제 주문한 고객들의 리뷰와 평점 확인은 필수!">
+ <!-- 아래 코드 Bad 이유? -->
+  <!-- <meta http-equiv="Access-Control-Allow-Origin" content="https://www.baemin.com"> -->
+  <link rel="image_src" href="http://woowahan1.vipweb.kr/cache/baemin/fb/common/baemin.jpg" />
+  <!-- 파비콘 제너레이터: http://realfavicongenerator.net/ -->
+  <link rel="shortcut icon" type="image/png" href="images/favicon.ico">
+  <link rel="apple-touch-icon" href="http://img.woowahan.com/www/common/favicon.png?v=20151106">
+  <!-- canonical 비어있으면 error -->
+  <!-- <link rel="canonical"  href="" /> -->
+  <link rel="stylesheet" href="../Resources/initialization/reset.css">
+  <!-- <link rel="stylesheet" href="../Resources/initialization/normalize.css"> -->
+  <!-- <link rel="stylesheet" href="../Resources/initialization/ress.min.css"> -->
+  <link rel="stylesheet" href="css/common.css" media="screen">
+  <link rel="stylesheet" href="css/main.css" media="screen">
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<link href="/js/respond-proxy.html" id="respond-proxy" rel="respond-proxy">
+<script src="/js/respond.min.js"></script>
+<script src="/js/respond.proxy.min.js"></script>
+<script src="/js/html5shiv.js"></script>
+<html class="lt-ie-9">
+<![endif]-->
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- 	<script src="/js/placeholder.min.js"></script>
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.migrate.min.js"></script>
+	<script src="/js/jquery.lazyload.js"></script>
+	<script src="/js/jquery.lazyloadimg.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/ui.common.js?1476001481"></script>
+	<script src="/js/common.js"></script>
+	<script src="/js/jquery.masonry.min.js"></script>
+	<script src="/js/jquery.carouFredSel.min.js"></script>
+	<script src="/js/jquery.touchSwipe.min.js"></script>
+	<script src="/js/kakao.link.js"></script> -->
+			<!--[if !IE 8]>
+		<script src="/js/jquery.backgroundPosition.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+<div id="wrap">
+	<header>
+	<!-- 스크린리더 상 서비스 이름이 읽히는게 우선이라 생각한다. 그래서 화면에서 가장 상단에 보이는게 네비게이션 이라도 HTML 문서 상 가장 우선이 무엇인지 생각하자. -->
+
+		<!-- S , E 로 축약보다는 명시적 표기가 어떨까? -->
+		<!-- 웹 -->
+		<!-- 로그인 영역 : Start-->
+		<!-- 시작을 gnb의 요소들로 기능마다 section으로 처리 하였다. section은 반드시 제목요소를 가지는게 지향 아니었나? 그리고 grouping의 의미가 그냥 로그인 한가지 기능을 만들기 위한 모든 태그를 뜻하는게 아니라 '뉴스' section에 '시사' 이런식이 되어야 하는게 아닌가? -->
+		<!-- 문서 의미상 닫기가 먼저 나오는건 잘못되지 않았는가? -->
+		<!-- [Warning] gnb-mem이 섹션이라 제목요소 필요함. 이걸 div로 대체? -->
+		<section class="gnb-mem">
+			<div class="login-area">
+				<button type="button" onclick="closeLayer('gnb-mem'); closeLayer('find-pw-area');return false;" class="btn-gnb-close">닫기</button>
+				<fieldset class="login">
+					<legend class="sr-only">로그인</legend>
+					<form name="formLogin" id="formLogin" method="post">
+						<div class="row">
+							<div class="col-lg-9 col-sm-9 col-xs-8">
+								<div class="form-group">
+									<!-- for에 _대신 -로 고칠까? -->
+									<label class="sr-only" for="login_id">아이디</label>
+									<!-- ime-mode는 무슨뜻? -->
+									<!-- 배민코드 style="ime-mode" 중복되어있다. -->
+									<input type="text" style="ime-mode:disabled" class="form-control" id="login_id" name="login_id" onkeyup="GJF_Only_Email(this);" placeholder="아이디 또는 이메일">
+									<input type="hidden" name="refurl" id="refurl" value="">
+									<input type="hidden" name="Cururl" id="Cururl" value="">
+								</div><!-- [end] form-group 1-->
+
+								<div class="form-group">
+									<label class="sr-only" for="login_pwd">비밀번호</label>
+									<input type="password" class="form-control" id="login_pwd" name="login_pwd" onkeypress="loginiKeyPress(event)" placeholder="비밀번호" maxlength="20">
+								</div><!-- [end] form-group 2-->
+							</div><!-- [end] col 1-->
+							<div class="col-lg-3 col-sm-3 col-xs-4 pls0">
+								<button type="button" class="btn btn-success btn-lg btn-block btn-login" onclick="fn_login_form_chk();"><span class="btn-gnb-login">로그인</span></button>
+							</div><!-- [end] col 2 -->
+						</div><!-- [end] row -->
+						<!-- 아이디저장 / 비밀번호찾기 : Start -->
+						<ul class="idpw list-unstyled list-inline">
+							<li>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="save_id" onclick="fn_confirm_save(this);">아이디 저장
+									</label>
+									<!-- 여기서 em으로 처리한 이유? 그냥 span써도 되지 않을까? -->
+									<!-- 이런 문자는 엔티티코드로 넣어야 하지 않는가? -->
+									<em>&#124;</em>
+								</div><!-- [end] checkbox -->
+							</li>
+							<li class="cur" onclick="openLayer('find-pw-area');return false;">비밀번호 찾기
+							</li>
+						</ul>
+						<!-- 아이디 저장 메시지 알람인데 왜 blockquote를 ? -->
+						<blockquote class="alarm text-primary"></blockquote><!-- 아이디저장 메시지 알람 -->
+						<input type="hidden" name="user_id" id="user_id">
+						<input type="hidden" name="pwd" id="pwd">
+						<input type="hidden" name="date" id="date">
+						<!-- value 값 무슨의미? -->
+						<input type="hidden" name="req_Url" id="req_Url" value="/?gclic=CLvCpv-lzc8CFVIAvAodCJIC\g">
+					</form>
+
+				</fieldset><!-- [end] login -->
+			</div><!-- [end] login-area -->
+
+			<!-- 비밀번호 찾기 : Start -->
+			<!-- [Error] fieldset에 button이 먼저나오면 오류 legend에 문제생김 -->
+			<div class="find-pw-area">
+				<fieldset class="find-pw">
+					<legend>비밀번호 찾기</legend>
+					<button type="button" class="btn-gnb-close" onclick="closeLayer('find-pw-area');return false;">닫기</button>
+					<p class="text-left text-muted xsmall">가입하신 이메일로 임시 비밀번호를 보내드립니다.</p>
+					<form class="form-horizontal">
+						<div class="form-group m0">
+							<!-- [Error] label for 사용시 input id랑 연결 시키던지, 아니면 속성없는 label 자식으로 input 넣던지, for="inputEmail" 연결 id가 없다. -->
+							<label for="psw_email" class="col-lg-2 col-xs-3 pls0 control-label"><strong>이메일</strong></label>
+							<div class="col-lg-10 col-xs-9 ps0">
+								<input type="email" class="form-control" id="psw_email"><!-- 이메일주소 입력 -->
+							</div><!-- [end] col 3 -->
+						</div><!-- [end] form-group 3-->
+						<div class="col-lg-offset-2 col-lg-10 col-xs-12 pls0 note">
+							아이디, 비밀번호 찾기 추가 문의는<a href="#">문의하기</a>에 내용을 남겨주세요. 고객센터에서 확인 후 회신 드리겠습니다.
+						</div><!-- [end] col-offset -->
+						<div class="form-group of-h col-lg-12 col-xs-12 m0 ps0">
+							<button type="button" class="btn btn-success btn-block" onclick="fn_pwd_find();"><span class="btn-gnb-findpw">확인</span></button>
+						</div><!-- [end] form-group 4 -->
+
+						<!-- [Error] iframe src 비어 있어서 오류 -->
+						<!-- 인라인 frameborder, scrolling는 더이상 사용안하는 속성 CSS로 대체한다. -->
+						<iframe src="" style="width:0;position:absolute;top:-9999px;" width="0" height="0" frameborder="0" scrolling="no" name="hidden_login_ifrm" id="hidden_login_ifrm"></iframe>
+					</form>
+				</fieldset><!-- [end] find-pw -->
+			</div><!-- [end] find-pw-area -->
+		</section><!-- [end] gnb-mem -->
+		<!-- 로그인 영역 : End -->
+
+<!-- 하위 버전에서는 type="text/javascript"을 적어야 하는가? -->
+<!-- script 보류 -->
+<script>
+</script>
+
+		<!-- 앱 다운로드 : Start // 모바일에서만 노출 // 서비스소개의 다운로드 링크로 보냄(디바이스별 분기) -->
+		<div class="alarm-app-down" id="mobile" onclick="fn_MobileAppLink();return">
+			<button type="button" id="MobileAppDownBtn">X</button>
+			<a href="market://details?id=com.sampleapp" id="MobileAppLink">지금 배달의민족 앱을 설치해보세요!</a><!-- 테스트용 링크 -->
+		</div><!-- [end] alarm-app-down -->
+
+		<!-- 왜 서비스이름이 아니고 input부터 나오는건지..? -->
+		<!-- [warning] 아래에도 제목을 권장? -->
+		<section class="basic-tp-area">
+			<!-- [Error] id="CurClass"가 중복된다. -->
+			<!-- [Error] id="kw"가 중복된다. -->
+			<input type="hidden" name="CurClass" id="CurClass" value="">
+			<input type="hidden" name="kw" id="kw" value="">
+			<input type="hidden" name="loc_addr" id="loc_addr" value="서울 송파구 석촌동">
+
+			<!-- [Warning] 서비스 메인 h1은 최상단에서 읽어줘야 하지 않을까? -->
+			<!-- h1 서비스 이름 -->
+			<section class="tp-area">
+				<h1><a href="#" class="ir-el">배달의민족</a></h1>
+				<div class="gnb-wrap">
+					<span class="navigation" onclick="toggleLayer('gnb','navigation');return false;">네비게이션</span>
+					<ul class="list-inline gnb">
+						<!-- javascript는 무슨의미 -->
+						<li><a href="javascript:;" onclick="openLayer('gnb-mem');return false;">로그인</a><em>&#124;</em></li>
+						<li><a href="#">회원가입<em>&#124;</em></a></li>
+						<!-- 					<li><a href="javascript:;" onclick="alert('회원가입은 앱으로 진행해 주세요. 8/16까지 PC로는 회원 가입이 되지 않습니다. 이용에 불편을 드려 죄송합니다')">회원가입</a> <em>&#124;</em></li> -->
+						<li><a href="#">고객센터</a></li>
+					</ul>
+				</div><!-- [end] gnb-wrap -->
+
+				<!-- 위치설정 : Start -->
+				<fieldset class="header-loc">
+					<legend class="sr-only">위치설정</legend>
+					<div class="set-loc" onclick="toggleLayer('dong-srch','drop-down');return false;">
+						<em>내위치 :</em>
+						<span class="addr text-ellipsis" id="locText">서울 송파구 석촌동</span><!-- 선택된 위치 노출 -->
+						<span class="drop-down">위치설정</span>
+					</div><!-- [end] set-loc -->
+
+					<!-- 현재 위치 검색 : Start -->
+					<div class="dong-srch">
+						<fieldset>
+							<p class="not i">현재 설정된 주소가 맞지 않으신가요?<br>동명을 검색해서 다시 설정해주세요.</p>
+							<input type="search" class="form-control" id="sch-addr" onkeyup="evtKeyUp(event)" onkeypress="evtKeyPress(event)" placeholder="동명을 입력하세요">
+							<button type="button" onclick="fn_schAddr();">찾기</button>
+						</fieldset>
+
+						<!-- 결과 : Start -->
+						<!-- addrlist 이 요소는 어떤용도? -->
+						<div id="addrlist" class="small"></div>
+						<div class="set-current-loc">
+							<button type="button" class="btn btn-block btn-set-loc" onclick="fn_current_loc_set(); fn_send_ga('Location', 'Auto_Set',' ');return false;" ><em>-</em>현재위치 자동검색</button>
+						</div><!-- [end] set-current-loc -->
+					</div><!-- [end] dong-srch -->
+				</fieldset><!-- [end] header-loc -->
+
+				<!-- 키워드검색 : Start -->
+				<fieldset class="header-search cate-srch">
+					<legend class="sr-only">검색</legend>
+					<!-- 키워드 검색 필드 : S -->
+					<div class="input-group srch">
+						<input type="text" class="form-control" id="sch_kwd" style="ime-mode:inactive" onkeypress="evtKeyPress(event)" placeholder="업소명을 검색해주세요">
+						<span class="input-group-btn">
+							<button type="button" onclick="fn_sch_kwd(); return false;" class="btn">검색</button>
+						</span>
+					</div><!-- [end] input-group srch -->
+				</fieldset><!-- [end] header-search cate-srch -->
+				
+				<!-- 카테고리 : Start -->
+				<div class="category-set main">
+					<dl class="dl-horizontal">
+						<dt class="dt-category" onclick="toggleLayer('cate-srch', 'dt-category');return false;">카테고리 : </dt>
+						<dd class="cate-srch">
+							<div class="cate-area">
+								<ul id="category" class="list-inline list-unstyled">
+									<li class="chicken" onclick="fn_sch_kw('치킨');">치킨<em>&#124;</em></li>
+									<li class="chinese" onclick="fn_sch_kw('중국집');">중국집<em>&#124;</em></li>
+									<li class="pizza" onclick="fn_sch_kw('피자');">피자<em>&#124;</em></li>
+									<li class="korean" onclick="fn_sch_kw('한식,분식');">한식,분식<em>&#124;</em></li>
+									<li class="jokbal" onclick="fn_sch_kw('족발,보쌈');">족발,보쌈<em>&#124;</em></li>
+									<li class="night" onclick="fn_sch_kw('야식');">야식<em>&#124;</em></li>
+									<li class="japanese" onclick="fn_sch_kw('돈까스,회,일식');">돈까스,회,일식<em>&#124;</em></li>
+									<li class="tang" onclick="fn_sch_kw('찜,탕');">찜,탕<em>&#124;</em></li>
+									<li class="dosirak" onclick="fn_sch_kw('도시락');">도시락<em>&#124;</em></li>
+									<li class="fastfood" onclick="fn_sch_kw('패스트푸드');">패스트푸드<em>&#124;</em></li>
+									<li class="baro" onclick="fn_sch_kw('바로결제');">바로결제<em>&#124;</em></li>
+									<li class="etc" onclick="fn_sch_kw('기타');">기타<em>&#124;</em></li>
+									<li class="all" onclick="fn_sch_kw('모아보기');">모아보기<em>&#124;</em></li>
+								</ul>
+							</div><!-- [end] cate-area -->
+							<div class="cate-control-main">
+								<a href="javascript:" class="prev4">&lt;</a>
+								<a href="javascript:" class="next4">&gt;</a>
+							</div><!-- [end] cate-control-main -->
+						</dd><!-- [end] cate-srch -->
+					</dl>
+				</div><!-- [end] category-set main -->
+			</section><!-- [end] tp-area -->
+		</section><!-- [end] basic-tp-area -->
+
+<!-- contblock (앱다운로드) : End  -->
+<script></script>
+	</header>
+		
+		<!-- 왜? main을 사용하지 않았는가?  -->
+		<!-- hidden에 용도를 정확히 파악하자 -->
+		<!-- col1: 작은 동그라미, col2: 이벤트 처럼 큰 동그라미. 파악하자  -->
+		<!-- cont 이라는 클래스명이 애매하지 않나? -->
+		<!-- 아래 중복 -->
+<!-- 		<input type="hidden" name="CurClass" id="CurClass" value="">
+		<input type="hidden" name="kw" id="kw" value=""> -->
+		<div class="container of-h">
+			<div class="cont">
+				<div class="boxm col1" onclick="fn_sch_kw('치킨');">
+					<div class="cutter chicken">
+						<div class="cover"></div>
+						<div class="default">치킨</div>
+					</div><!-- [end] cutter chicken -->
+				</div><!-- [end] boxm col1 -->
+
+				<div class="boxm col1" onclick="fn_sch_kw('중국집');">
+					<div class="cutter chinese">
+						<div class="cover"></div>
+						<div class="default">중국집</div>
+					</div><!-- [end] cutter chinese -->
+				</div><!-- [end] boxm col1 -->
+
+				<div class="boxm col1" onclick="fn_sch_kw('피자');">
+					<div class="cutter pizza">
+						<div class="cover"></div>
+						<div class="default">피자</div>
+					</div><!-- [end] cutter pizza -->
+				</div><!-- [end] boxm col1 -->
+
+				<div class="boxm col1" onclick="fn_sch_kw('한식,분식');">
+					<!-- korean 보다 koreafood가 좋지않나? -->
+					<div class="cutter korean">
+						<div class="cover"></div>
+						<div class="default">한국,분식</div>
+					</div><!-- [end] cutter korean -->
+				</div><!-- [end] boxm col1 -->
+
+				<!-- 이벤트 프로모션-->
+				<div class="boxm col2">
+					<div class="cutter promo">
+						<div class="default">
+							<ul id="promotion" class="list-inline">
+								<li style="background-image:url('images/item_1.png')"><a href="#">매일 치킨 최대 1만원 할인</a></li>
+							</ul>
+							<div class="btn-control">
+							<!-- javascript:; 는 무슨 코드냐? -->
+								<a href="javascript:;" class="prev prev3">&lt;</a>
+								<a href="javascript:;" class="next next3">&gt;</a>
+							</div><!-- [end] btn-control -->
+
+							<!-- 왜 이렇게 id, class를 동일한 값으로 설정?  -->
+							<div id="pager" class="pager"></div>
+						</div><!-- [end] default -->
+					</div><!-- [end] cutter promo -->
+				</div><!-- [end] boxm col2 -->
+
+				<div class="boxm col1" onclick="fn_sch_kw('족발,보쌈');">
+					<div class="cutter jokbal">
+						<div class="cover"></div>
+						<div class="default">족발,보쌈</div>
+					</div><!-- [end] cutter jokbal -->
+				</div><!-- [end] boxm col1 -->
+
+				<div class="boxm col1" onclick="fn_sch_kw('야식');">
+					<div class="cutter night">
+						<div class="cover"></div>
+						<div class="default">야식</div>
+					</div><!-- [end] cutter night -->
+				</div><!-- [end] boxm col1 -->
+
+				<div class="boxm col1" onclick="fn_sch_kw('찜,탕');">
+					<div class="cutter tang">
+						<div class="cover"></div>
+						<div class="default">찜,탕</div>
+					</div><!-- [end] cutter tang -->
+				</div><!-- [end] boxm col1 -->
+
+				<div class="boxm col1" onclick="fn_sch_kw('돈까스,회,일식');">
+					<div class="cutter japanese">
+						<div class="cover"></div>
+						<div class="default">돈까스,회,일식</div>
+					</div><!-- [end] cutter japanese -->
+				</div><!-- [end] boxm col1 -->
+
+				<div class="boxm col1" onclick="fn_sch_kw('도시락');">
+					<div class="cutter dosirak">
+						<div class="cover"></div>
+						<div class="default">도시락</div>
+					</div><!-- [end] cutter night -->
+				</div><!-- [end] boxm col1 -->
+
+				<div class="boxm col1" onclick="fn_sch_kw('패스트푸드');">
+					<div class="cutter fastfood">
+						<div class="cover"></div>
+						<div class="default">패스트푸드</div>
+					</div><!-- [end] cutter fastfood -->
+				</div><!-- [end] boxm col1 -->
+
+				<div class="boxm col2">
+					<div class="cutter game">
+						<a href="#">
+							<div class="default">게임</div>
+						</a>
+					</div><!-- [end] gutter game -->
+				</div><!-- [end] boxm col2 -->
+
+				<!-- ' - ' 표시 바꿔야 하지 않나? -->
+				<div class="boxm col1">
+					<div class="cutter baro" onclick="fn_sch_kw('바로결제');return false;">
+						<div class="cover"></div>
+						<div class="default">바로결제</div>
+					</div><!-- [end]  cutter baro -->
+				</div><!-- [end] boxm col1 -->
+				<div class="boxm col1 masonry-brick">
+					<div class="cutter nothing">
+						<div class="cover"></div>
+						<div class="default">땜빵 - 저스트낫띵</div>
+					</div><!-- [end]  cutter nothing -->
+				</div><!-- [end] boxm col1 masonry-brick -->
+			</div><!-- [end] cont -->
+
+			<div class="bt-cont">
+				<div class="row">
+					<!-- 공지사항 : Start -->
+					<div class="col-md-6 col-xs-12 col-sm-12 lf-box">
+						<div class="title-area">
+							<h3 class="notice">공지사항</h3>
+							<a href="#" class="btn btn-more">더보기</a>
+						</div><!-- [end] title-area -->
+						<div class="cont-area">
+							<h4>
+								<a href="#" class="text-ellipsis">[공지] 개인정보처리방침 일부 변경에 관한 안내</a>
+							</h4>
+								<p>안녕하세요.㈜우아한형제들의 배달의민족 개인정보처리방침을 일부 변경하게 되어 이를 알려드리고자....</p>
+								<!-- 날짜는 'em' 대신 'time' 이 아닌가? pubdate는 발행일을 의미-->
+								<time class="text-muted" datetime="2016-10-14">2016-10-14</time>
+						</div><!-- [end] cont-area -->
+					</div><!-- [end] col... lf-box -->
+
+					<!-- 배달의민족 소개 : Start -->
+					<div class="col-md-6 col-xs-12 rt-box hidden-xs hidden-sm">
+						<div class="title-area">
+							<h3 class="baedal">배달의민족 소개</h3>
+							<div class="btn-group">
+								<a href="#" class="btn btn-down">앱다운로드</a>
+								<a href="#" class="btn btn-more">더보기</a>
+							</div><!-- [end] btn-group -->
+						</div><!-- [end] title-area -->
+
+						<div class="cont-area">
+							<div class="media"></div>
+						</div><!-- [end] cont-area -->
+					</div><!-- [end] col... rt-box -->
+				</div><!-- [end] row -->
+
+				<div class="row">
+					<!-- 우아한 나눔 캠페인 : Start -->
+					<div class="col-md-6 col-xs-12 lf-box hidden-xs hidden-sm">
+						<div class="title-area">
+							<h3 class="woowa">우아한 나눔 캠페인</h3>
+							<div class="btn-group">
+								<a href="javascript:;" class="btn btn-view lf prev1">&lt;</a>
+								<a href="javascript:;" class="btn btn-view rf next1">&gt;</a>
+							</div><!-- [end] btn-group -->
+						</div><!-- [end] title-area -->
+						<div class="cont-area">
+							<ul id="woowacamp" class="list-inline">
+								<li>
+									<a href="#" target="_blank">
+										<span class="txt woowa1">365일 우유로 안부를 물어요! 배달의민족이 함께하는 나눔문화 혼자 사시는 노인분들께 우유를 배달해 드려요!</span>
+										<span class="img">
+											<img src="images/bnr-img-woowa01.gif" alt=""></span>
+									</a>
+								</li>
+								<li>
+									<a href="#" target="_blank">
+										<span class="txt woowa2">우와!~한 무료글꼴, 배달의민족 한나체,주아체 배달의민족의 아이덴티티를 담은 하나체,주아체는 모두에게 무료로 제공되는 서체입니다.</span>
+										<span class="img">
+											<img src="images/bnr-img-woowa02-v2.gif" alt=""></span>
+									</a>
+								</li>
+								<li>
+									<a href="#" target="_blank">
+										<span class="txt woowa3">'풋~아~'이런 브랜드 제품, 즐겁지 아니한가! 배달의민족스러운 브랜드 제품들! 10x10에서 만나볼 수 있어요.</span>
+										<span class="img">
+											<img src="images/bnr-img-woowa03.gif" alt=""></span>
+									</a>
+								</li>
+							</ul>
+						</div><!-- [end] cont-area -->
+					</div><!-- [end] col.. lf-box -->
+
+					<!-- 바로결제 팁 : Start -->
+					<div class="col-md-6 col-xs-12 rt-box hidden-xs hidden-sm">
+						<div class="title-area">
+							<h3 class="barotip">바로결제 팁</h3>
+							<div class="btn-group">
+								<a href="javascript:;" class="btn btn-view lf prev2">&lt;</a>
+								<a href="javascript:;" class="btn btn-view lf next2">&gt;</a>
+							</div><!-- [end] btn-group -->
+						</div><!-- [end] title-area -->
+						<div class="cont-area">
+							<ul id="btip" class="list-inline">
+								<li>
+									<a href="javascript:fn_barotip_det('1');">
+										<span class="txt baro1">다양한 결제 수단을 사용할 수 있어요.</span>
+										<span class="img"><img src="images/bnr-img-baro01.gif" alt=""></span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:fn_barotip_det('2');">
+										<span class="txt baro2">포인트 모아 먹고 싶은 것 시켜 먹어요.</span>
+										<span class="img"><img src="images/bnr-img-baro02.gif" alt=""></span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:fn_barotip_det('3');">
+										<span class="txt baro3">한번 주문한 주소를 기억하고 있어요.</span>
+										<span class="img"><img src="images/bnr-img-baro03.gif" alt=""></span>
+									</a>
+								</li>
+							</ul>
+						</div><!-- [end] cont-area -->
+					</div><!-- [end] col.. rt-box -->
+				</div><!-- [end] row -->
+			</div><!-- [end] bt-cont -->
+		</div><!-- [end] container of-h -->
+
+<script>//바로결제Tip</script>
+<script>//Google Sitelinks search box</script>
+</div><!-- [end] wrap (footer 제외) -->
+
+<!-- footer를 wrap으로 감싸지 않으건 div.wrap은 의미없이 디자인을 위한 것이라서 footer부터 정렬 기준은 달리 하기 위해서 인가? (header 부터 main 까지) 
+-->
+<footer>
+	<section class="foot-area">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-12">
+				<ul class="lnk list-inline xsmall">
+					<li><a href="#" title="배달의민족">배달의민족 소개</a><em>&#124;</em></li>
+					<li><a href="#" title="바로결제란">바로결제란</a><em>&#124;</em></li>
+					<li><a href="#" title="이용약관">이용약관</a><em>&#124;</em></li>
+					<li><a href="#" title="전자금융거래 이용약관">전자금융거래 이용약관</a><em>&#124;</em></li>
+					<li><a href="#" title="개인정보처리방침">개인정보처리방침</a><em>&#124;</em></li>
+					<li><a href="#" target="_blank" title="광고신청" onclick="fn_send_ga('Ad_Request_Link', 'Click', '');">광고신청</a><em>&#124;</em></li>
+					<li><a href="#" title="문의하기">문의하기</a><em>&#124;</em></li>
+					<li><a href="#" target="_blank" title="회사소개" onclick="fn_send_ga('Woowahan_Link', 'Click', '');">회사소개</a><em>&#124;</em></li>
+					<li><a href="#" target="_blank" title="사장님사이트" onclick="fn_send_ga('Ceo_Link', 'Click', '');">사장님사이트</a><em>&#124;</em></li>
+					<li><a href="#" target="_blank" title="블로그 바로가기" onclick="fn_send_ga('Blog_Link', 'Click', '');">블로그 바로가기</a><em>&#124;</em></li>
+					<li class="fb"><a href="#" target="_blank" title="페이스북" onclick="fn_send_ga('Facebook_Link','Click','');">페이스북 바로가기</a></li>
+				</ul>
+			</div><!-- [end] col... -->
+
+			<div class="col-lg-6 col-md-6 col-sm-12">
+				<div class="woowa-info xsmall text-muted">
+					<div>
+						배달의민족 콜센터 : 1644-0025 (24시간운영, 연중무휴)<a href="#">메일보내기</a>
+					</div>
+					<!-- 여긴 왜 (주)가 특수문자가 아닌가? -->
+					<div>(주)우아한형제들
+						<span>대표 : 김봉진</span>
+						<span>사업자번호 : 120-87-65763</span>
+						<a href="#" class="bizinfo" target="_blank">사업자정보확인</a>
+					</div>
+					<div>
+						통신판매업 : 서울 송파 -0515
+						<!-- [Error] span의 자식으로 address가 올 수없다. 그래서 CSS에서 inline으로 바꾸자-->
+						<!-- <span>주소 : 
+							<address>서울 송파구 석촌호수로 220 보정빌딩 10층</address>
+						</span> -->
+						주소 : <address>서울 송파구 석촌호수로 220 보정빌딩 10층</address>
+					</div>
+					<!-- 전자금융거래이용약관 -->
+					<div class="cs-fc">
+						<p>전자금융분쟁처리</p>
+						<span>Tel : 1644-0025</span>
+						<span>Fax : 02-532-5854</span>
+						<span>메일 : help@woowahan.com</span>
+					</div>
+					<div class="copyright">copyright Woowa Brothers in Song-pa</div>
+					<!-- [end] 전자금융거래이용약관 -->
+				</div><!-- [end] woowa-info -->
+			</div><!-- [end] col... -->
+		</div><!-- [end] row -->
+		
+		<div class="foot-info xsmall text-muted">배달의민족은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 배달의민족은 상품 거래정보 및 거래에 대해 책임지지 않습니다.</div>
+	</section><!-- [end] foot-area -->
+
+	<section class="award-area">
+		<ul id="award" class="award list-inline xsmall">
+			<li><span class="award1">kisa</span><em>대한민국 인터넷 대상<br>국무총리상 수상</em></li>
+			<li><span class="award2">kisa</span><em>지식경제부 선정<br>올해의 청년기업인</em></li>
+			<li><span class="award3">kisa</span><em>2012 스마트앱어워드<br>생활편의부분 대상</em></li>
+			<li><span class="award1">kisa</span><em>2012 한국인터넷진흥원<br>중소벤처 유망 LBS 선정</em></li>
+			<li><span class="award4">kisa</span><em>대한민국 스마트 TV 앱<br>이노베이션 선정</em></li>
+		</ul>
+		<button type="button" class="nextcrs">다음으로</button>
+	</section>
+
+<script>//googleleadservices</script>
+<!-- 네이버 프리미엄 로그 분석 -->
+<script></script>
+<!-- [end] 네이버 프리미엄 로그 분석 -->
+
+<script>// footer carousel script</script>
+</footer><!-- [end] footer -->
+
+<!-- 무슨용도 -->
+<div id="fb-root"></div>
+<script>// Beacon</script>
+
+</body>
+</html>

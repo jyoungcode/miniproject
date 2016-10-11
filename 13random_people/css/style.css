@@ -1,3 +1,34 @@
+/* css 선언 포인트 */
+/* font-color 등 디자인 속성으 부모에다가 몰아 넣는다. */
+/* btn btn-next 같은 경우 btn에 모듈로 공통 속성을 넣는다 */
+/* 
+	HTML 작성 후
+	CSS 작성 순서
+	1. 큰단위 레이아웃 
+	2. 1010 이 1024 기준 최대사이즈 , 970이 12grid 기본 사이즈 
+	3. tio
+	.user_menu li + li::before {
+		content: ' ';
+		position: absolute;
+		left: 0;
+		top: 0.9em;
+		display : block;
+		width: 1px;
+		height: 10px ;
+		background: #999;
+	};
+*/
+
+
+/* 
+	주의사항 정리 
+	1. 그리드는 적용 하는 곳만 따로 적용하자
+	2. %는 부모가 기준이라서 unit 적용시 부모가 작은 unit이면 자식은 난감
+	3. float 된 속성은 margin이 적용되지 않는다.
+	4. 중앙 정렬이 어려운 unit은 전체 unit후 text-align center쓰자
+	5. 스타일 속성은 부모에게 적용하자
+	6. 공통 속성은 모듈로 만들다
+*/
 .align-center {
 	margin: 0 auto;
 }

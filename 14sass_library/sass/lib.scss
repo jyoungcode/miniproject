@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+// border-color
+@mixin border-color($vals...){
+	@include directional-property(border, color, $vals...);
+}
+@mixin directional-property($pre, $suf, $vals){
+	@include _bourbon-deprecate("directional-property");
+}
+
+// box
+
+@function my-box($num_value){
+
+}

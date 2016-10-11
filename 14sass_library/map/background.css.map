@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "../css/background.css",
+	"sources": [
+		"../sass/background.scss"
+	],
+	"mappings": "",
+	"names": []
+}

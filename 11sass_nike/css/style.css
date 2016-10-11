@@ -1,0 +1,23 @@
+/* style.css @jyoungcode */
+header h1 {
+  text-indent: -9999px;
+}
+
+.btn {
+  padding: 0;
+  border: none;
+}
+
+button img {
+  vertical-align: middle;
+}
+
+.icon_menu {
+  cursor: pointer;
+}
+
+.icon_shopping {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=../map/style.css.map */

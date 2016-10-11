@@ -1,0 +1,157 @@
+
+/*legend label*/
+.sr-only {}
+
+/*form div형태 wrap*/
+.form-group {}
+.form-control {} /* input */
+
+/* col에 연결된 클래스 */
+.pls0 {}
+.ps0 {}
+
+/*button*/
+.btn {}
+.btn-success {}
+.btn-lg {}
+.btn-block {}
+.btn-login {}
+.btn-gnb-close {}
+.btn-gnb-findpw {}
+.btn-set-loc {}
+.btn-control {}
+.btn-more {}
+.btn-group {}
+.btn-down {}
+.btn-view {}
+
+.nextcrs {}
+
+/*ul 연결 클래스*/
+.idpw {}
+.list-unstyled
+.list-inline {}
+
+/* 아이디저장 div*/
+.checkbox {}
+.cur {}
+
+/* blockquote */
+.alarm {}
+.text-primary {}
+
+/* input */
+#user_id {}
+#pwd {}
+#date {}
+#req_Url {}
+#psw_email {}
+#CurClass {}
+#kw {}
+#loc_addr {}
+#sch_addr {}
+
+
+/* text */
+.text-left {}
+.text-muted {}
+.xsmall {}
+.text-ellipsis {}
+
+/*form-group 연결 */
+.m0 {}
+
+/* 이메일 입력 label */
+.control-label {}
+
+/* 아이디비밀번호찾기 추가문의 */
+.note {}
+
+/* idpw찾기 확인div */
+.of-h {}
+
+/* h1 */
+.ir-el {}
+
+/* gnb */
+.gnb {}
+
+/* 위치설정 */
+.addr {}
+.drop-down {}
+
+/* 현재 설정 주소 */
+.not {}
+.i {}
+
+/*결과*/
+#addrlist {}
+.small {}
+
+/*키워드 검색*/
+.cate-srch {}
+.srch {}
+#sch_kwd {}
+
+/*카테고리*/
+.main {}
+.cate-area {}
+#category {}
+
+.chicken {}
+.chinese {}
+.pizza {}
+.korean {}
+.jokbal {}
+.night {}
+.japanese {}
+.tang {}
+.dosirak {}
+.fastfood {}
+.baro {}
+.etc {}
+.all {}
+
+/*캐러셀*/
+.prev4 {}
+.next4 {}
+.prev3 {}
+.next3 {}
+.prev1 {}
+.next1 {}
+.prev2 {}
+.next2 {}
+
+/* 메인 컨테이너 카테고리 동그라미 음식 */
+.boxm {}
+.cutter {}
+.cover {}
+.default {}
+.promo {}
+#promotion {}
+.game {}
+.masonry-brick {}
+.nothing {}
+
+.pager {}
+#pager {}
+
+/* 공지사항 박스 */
+.lf-box {}
+.rt-box {}
+.lf {}
+.rf {}
+
+/* h3 */
+.notice {}
+.baedal {}
+
+.txt {}
+.woowa1 {}
+.woowa2 {}
+.woowa3 {}
+
+.img {}
+
+/*바로결제 팁*/
+
